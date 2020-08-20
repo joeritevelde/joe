@@ -1,0 +1,2689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"02bf0a7962","applicationID":"131593373","transactionName":"dl4KRhNdXFwDQRhKUFlUFx0SWl9H","queueTime":0,"applicationTime":222,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"02bf0a7962",applicationID:"131593373"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<!-- Segment tracking code -->
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var t=analytics.methods[e];analytics[t]=analytics.factory(t)}analytics.load=function(e,t){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+e+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=t};analytics.SNIPPET_VERSION="4.1.0";
+    analytics.load("F5N0T2KM4PqCMrFdvMGuEM9J7DlZiDUV");
+  }}();
+</script>
+
+
+<script>analytics.page();</script>
+<!-- END Segment tracking code -->
+
+<!-- Page hiding snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',1000,
+{'GTM-P2BQKM':true});</script>
+<title>
+  The Fundamentals of Real Estate Investment Bundle | GDGT Deals
+</title>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deals.gdgt.com/feed.rss" />
+<meta
+  name="description"
+  content="" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cdnp3.stackassets.com/1734089bc9ce8294354c1ca24bb4ef2f1fc0f901/store/34b5c2d84b0d03441f81bfba8a90ec0cb15d3f688a9d34e2b7c2ab9667f6/_favicon.jpg" />
+<link rel="apple-touch-icon" type="image/x-icon" href="https://cdnp3.stackassets.com/1734089bc9ce8294354c1ca24bb4ef2f1fc0f901/store/34b5c2d84b0d03441f81bfba8a90ec0cb15d3f688a9d34e2b7c2ab9667f6/_favicon.jpg" />
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" media="all" href="https://shops1.stackassets.com/assets/classic-3afe4241547d49f672d400aaadbb1e39364627cf14dbb0ada5f5eae0a48ae24c.css" />
+  <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" />
+
+  <meta name="google-site-verification" content="nZaXyYvT2ftmCQvyIF_1R_b4ofsli2BFzJxsKWuL9NU" />
+
+
+<style>.publisher-engadget .brand-primary,.publisher-engadget .shopping-cart-icon.active,.publisher-engadget .my-account-container .nav-tabs li a.active,.publisher-engadget #sc-nyop-buttons .btn-default.active .fa-circle,.publisher-engadget input[type=radio]:checked+label:before,.publisher-engadget input[type=checkbox]:checked+label:before,.publisher-engadget .upsell-cta--checked::before,.publisher-engadget .external-cta--checked::before,.publisher-engadget .external-cta--checked-user-not-logged::before,.publisher-engadget .footer .newsletter .btn-default,.publisher-engadget .js-cart-item-remove:hover,.publisher-engadget .mobile-search-icon.active .search-input-icon,.publisher-engadget .search-input:focus+.search-input-icon{color:#00b0ff}@media (min-width: 992px){.publisher-engadget .navbar-master .nav-item-container:hover .nav-item-link,.publisher-engadget .navbar-master .nav-item-link:hover{border-color:#00b0ff;color:#00b0ff !important}}.publisher-engadget #sc-nyop-leaderboard tr:first-child td:first-child strong,.publisher-engadget .table>tbody>tr.active td,.publisher-engadget .table>tbody>tr.active:hover td,.publisher-engadget .sc-form-group .bar:before,.publisher-engadget .sc-form-group .bar:after,.publisher-engadget .checkout .edit-address-bar,.publisher-engadget .footer-newsletter .btn-primary,.publisher-engadget .navbar.navbar-master .dropdown-nav-switcher .nav-item-link,.publisher-engadget .navbar.navbar-master .dropdown-nav-switcher.open .nav-item-link{background-color:#00b0ff}.publisher-engadget .address-verification-modal .btn-primary{background-color:#00b0ff}.publisher-engadget .address-verification-modal .btn-primary:hover{background-color:#009ee6}.publisher-engadget .table-hover>tbody>tr:hover,.publisher-engadget .active .shipping-address,.publisher-engadget .active .billing-address{background-color:#dbf4ff}.publisher-engadget .sc-product-thumbnails .product-thumbnail.active,.publisher-engadget input[type=radio]:checked+label:before,.publisher-engadget input[type=checkbox]:checked+label:before,.publisher-engadget .btn-selectable.active,.publisher-engadget .active .shipping-address,.publisher-engadget .active .billing-address{border-color:#00b0ff}.publisher-engadget .hello-bar{background-color:#2B2D32}.publisher-engadget .hello-bar a{color:#ABABAD}.publisher-engadget .alert-notification{background-color:#2b2d32;border-color:#131517;color:#ababad}.publisher-engadget .alert-notification hr{border-top-color:#080809}.publisher-engadget .alert-notification .alert-link{color:#919194}.publisher-engadget .navbar-default,.publisher-engadget .search-input,.publisher-engadget .navbar-collapse{background-color:#FFFFFF}.publisher-engadget .search-input-icon,.publisher-engadget .shopping-cart-icon,.publisher-engadget .navbar-default .navbar-nav>li>a,.publisher-engadget .navbar-default .navbar-nav>li>a:hover,.publisher-engadget .nav-item-link,.publisher-engadget .dropdown-menu>li>a,.publisher-engadget .dropdown-menu>li>a:hover,.publisher-engadget .navbar-default .navbar-nav>.open>a{color:#2B2D32}.publisher-engadget .navbar-default .navbar-toggle .icon-bar{background-color:#2B2D32}@media (max-width: 991px){.publisher-engadget .menu-list>li>a,.publisher-engadget .menu-list>li>.subnav-menu-label,.publisher-engadget .menu-list .subnav-menu-items a,.publisher-engadget .menu-list>li>a:hover{color:#2B2D32;background:none}}.publisher-engadget .navbar-toggle .icon-cart{font-size:1.7em}.publisher-engadget .navbar-toggle .search-input-icon{font-size:1.4em}@media (max-width: 991px){.publisher-engadget .navbar-default .nav-item,.publisher-engadget .navbar-default .subnav-menu,.publisher-engadget .navbar-default .subnav-menu-items{border:0;border-top:1px solid #d5d7db}.publisher-engadget .navbar-default .nav-item.open{border-color:transparent}.publisher-engadget .navbar-default .nav-item:first-child{border:0}}.publisher-engadget .navbar-search .search-input,.publisher-engadget .navbar-search-mobile .search-input{color:#2B2D32;border:1px solid #d5d7db}.publisher-engadget .shopping-cart-total .badge{background-color:#f41e37}.publisher-engadget #sc-hero-unit{background-image:url("https://cdnp3.stackassets.com/8baeb50d825b6496648910399985994c23dec70e/store/beaefca794797a8ff127ce9dce0a503cefa1e8ef1ad18568d777cf2a2678/engadget-Hero-v.jpg")}.publisher-engadget #sc-hero-unit.giveaway-no-banner{background-image:none}.primary-color{color:#00b0ff !important}.active.primary-border-color-active{border-color:#00b0ff !important}.primary-border-color-active:hover{border-color:#66d0ff !important}.primary-border-top{border-top-color:#00b0ff !important}.active.primary-border-top-active{border-top-color:#00b0ff !important}.primary-border-left{border-left-color:#00b0ff !important}.active.primary-border-left-active{border-left-color:#00b0ff !important}.primary-border-bottom{border-bottom-color:#00b0ff !important}.active.primary-border-bottom-active{border-bottom-color:#00b0ff !important}.primary-border-right{border-right-color:#00b0ff !important}.active.primary-border-right-active{border-right-color:#00b0ff !important}.buy-now-column .loyalty-callout{color:#00b0ff}.loyalty-callout--bar{background-color:#00b0ff}@media (min-width: 993px){.loyalty-callout--bar{background-color:#fff;color:#00b0ff}}.sale-duration{visibility:hidden}.sc-hero-unit-clock{visibility:hidden}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>function changeEmailTerms(){var e=document.querySelector(".email-capture-terms");e&&(e.innerHTML='By joining the StackCommerce mailing list, you agree to the StackCommerce <a href="/terms" target"_blank">Terms and Conditions</a>')}function addMRSPToPrice(){var e=document.querySelector("s.original-price");e.insertAdjacentHTML("afterend",'<span style="color:#666;">MSRP*</span>'),e.style.marginRight="5px"}function addMRSPToPriceBundle(){var e=document.querySelector("div.retail-price");e.insertAdjacentHTML("afterend",'<span style="color:#fff;">MSRP*</span>'),e.style.marginRight="5px"}function addMRSPCopyToFooter(){var e=document.querySelector("div.footer-newsletter");e.insertAdjacentHTML("afterend",'<div style="padding-top:30px;margin-bottom:30px;font-style:italic;">*MSRP is the retailer price recommended by the manufacturer/provider and may not be the prevailing market price.</div>')}var DOMReady=function(e,t,n){t=document,n="addEventListener",t[n]?t[n]("DOMContentLoaded",e):window.attachEvent("onload",e)};DOMReady(function(){addMRSPToPrice()}),DOMReady(function(){changeEmailTerms()}),DOMReady(function(){addMRSPToPriceBundle()}),DOMReady(function(){addMRSPCopyToFooter()});</script>
+
+<script>
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(["customTag", "LoggedIn", false]);
+</script>
+<script src="//cdn.optimizely.com/js/74647825.js"></script>
+
+
+
+<script src="https://shops1.stackassets.com/assets/shared-178e39bdb70b420a918ed588bf4172e270dc8aa76ed55b131ce6a9a30a39bf18.js"></script>
+<!--[if lte IE 9]>
+  <script src="https://shops1.stackassets.com/assets/jquery.html5-placeholder-shim-fd57d1a7d62d64d8cfd7af63ec58c8db8248e7709cac024b6946c984d31e9b7d.js"></script>
+  <script>
+    $.placeholder.shim();
+  </script>
+<![endif]-->
+
+  <script src="https://www.recaptcha.net/recaptcha/api.js?render=6LfHudMUAAAAAKBsc6ubBtwsz7xka6zB8S2UXrhk" async="async" defer="defer"></script>
+<script src="https://assets.jetlore.com/js/jlranker.js"></script>
+
+    <script type="application/ld+json"> {"@context":"https://schema.org/","@type":"Product","name":"The Fundamentals of Real Estate Investment Bundle","image":["https://cdnp3.stackassets.com/2614d88758764700f72ca3d5507224af40da4e8f/store/419ec49502b0bee1aa6afad113627777fb9ae08abb219af886e8e1911d09/product_41910_product_shot_wide.jpg","https://cdnp1.stackassets.com/db2299a1f82b89aa81ee05624c3f33e5ee2c7ae8/store/647e5ce0c92ac76143b56d919abde5e8762b2b2e536dd6ba3f752b3c8b1a/product_41910_product_shots1.jpg"],"description":"","brand":["Symon He","Symon He","Symon He","Symon He","Symon He"],"offers":{"@type":"Offer","url":"https://deals.gdgt.com/sales/the-fundamentals-of-real-estate-investment-bundle?utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=10888566877\u0026utm_term=%2Breal%20%2Bestate%20%2Binvestment%20%2Bguide\u0026gclid=CjwKCAjwm_P5BRAhEiwAwRzSOxCUIbtbRSFlSnCOaZPbVa5jE0sfgb2Dt3s-M68F-SQjChP-63KEhxoChtEQAvD_BwE","priceCurrency":"USD","price":"25.00","validFrom":"2020-07-24","priceValidUntil":null,"availability":"https://schema.org/InStock"}} </script>
+
+
+
+  <meta name="twitter:card" content="product" />
+<meta name="twitter:title" content="Enter the World of Real Estate &amp; Make Profitable Investments with 17 Hours of Content on REIT Fundamentals, Types, Frameworks, and More" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image:src" content="https://cdnp2.stackassets.com/24adbdac594f5c418c54ee3149ac4eea95971ba0/store/71e80afde44fe9868493a42795ab635f668f56616f535561c90b1d4b6126/sale_31347_primary_image.jpg" />
+<meta name="twitter:data1" content="$25.00" />
+<meta name="twitter:label1" content="PRICE" />
+<meta name="twitter:data2" content="97%" />
+<meta name="twitter:label2" content="OFF" />
+<meta name="twitter:domain" content="deals.gdgt.com" />
+<meta name="twitter:site" content="@engadget" />
+<meta name="twitter:creator" content="@engadget" />
+
+<meta property="fb:app_id" content="1149343908443120" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Enter the World of Real Estate &amp; Make Profitable Investments with 17 Hours of Content on REIT Fundamentals, Types, Frameworks, and More" />
+<meta property="og:image" content="https://cdnp2.stackassets.com/24adbdac594f5c418c54ee3149ac4eea95971ba0/store/71e80afde44fe9868493a42795ab635f668f56616f535561c90b1d4b6126/sale_31347_primary_image.jpg" />
+<meta property="og:site_name" content="GDGT Deals" />
+<meta property="og:url" content="https://deals.gdgt.com/sales/the-fundamentals-of-real-estate-investment-bundle?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=10888566877&amp;utm_term=%2Breal%20%2Bestate%20%2Binvestment%20%2Bguide&amp;gclid=CjwKCAjwm_P5BRAhEiwAwRzSOxCUIbtbRSFlSnCOaZPbVa5jE0sfgb2Dt3s-M68F-SQjChP-63KEhxoChtEQAvD_BwE" />
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="RLvfnAofPJlGm1ZJ8PE/tK6CHZKLdRIc5QtmItyp0MRRRA7uHihTA6CoGpLqCOobwgQtINfXSbh2uTYuZgaYVw==" />
+
+
+<script type="text/javascript">
+  var SC = SC || {};
+  SC.Shop = SC.Shop || {};
+
+  SC.Shop.Currency = {
+    symbol: '$',
+    code: 'USD',
+    name: 'US Dollar'
+  }
+</script>
+
+    <!-- Quantcast Tag, part 1 -->
+    <script type="text/javascript">
+      var _qevents = _qevents || [];
+      (function() {
+       var elem = document.createElement('script');
+       elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+       elem.async = true;
+       elem.type = "text/javascript";
+       var scpt = document.getElementsByTagName('script')[0];
+       scpt.parentNode.insertBefore(elem, scpt);
+      })();
+    </script>
+
+    <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '358413294509065');
+  fbq('track', "PageView");</script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=358413294509065&ev=PageView&noscript=1"
+  /></noscript>
+
+
+<script type="text/javascript">
+  window.fbq = window.fbq || (function(){});
+  window._fbq = window._fbq || [];
+</script>
+
+<script type="text/javascript">
+  window.dataLayer = [{
+    publisherId: '185',
+    vertical: 'technology',
+    affiliateId: '',
+    appEnvironment: 'production',
+    showEmailCapture: 'true',
+  }];
+
+  window.SC.code.analytics = {
+    customDimension: function(index, name, value) {
+      gtmPayload = {};
+      gtmPayload['dimension' + index] = value;
+      dataLayer.push(gtmPayload);
+    },
+
+    analyticsEvent: function(category, action, opt_label, opt_value, opt_noninteractive) {
+      // ensure value is integer. We encountered weird analytics behavior if decimals are sent
+      integer_value = Math.round(opt_value) || undefined
+
+      dataLayer.push({
+        'event': 'analyticsEvent',
+        'eventCategory': category,
+        'eventAction': action,
+        'eventLabel': opt_label,
+        'eventValue': integer_value,
+        'eventNonInt': opt_noninteractive
+      });
+    },
+
+    analyticsSocial: function(socialNetwork, socialAction, opt_socialTarget, opt_page) {
+      dataLayer.push({
+        'event': 'social',
+        'socialNetwork': socialNetwork,
+        'socialAction': socialAction,
+        'socialTarget': opt_socialTarget,
+        'socialPagePath': opt_page
+      });
+    },
+
+    analyticsVPV: function(virtualPageName) {
+      dataLayer.push({
+        'event': 'analyticsVPV',
+        'vpvName': virtualPageName
+      });
+    },
+
+    analyticsClearVPV: function() {
+      dataLayer.push({
+        'event': 'analyticsVPV',
+        'vpvName': undefined
+      });
+    },
+
+    analyticsForm: function(f, el) {
+      var formName = f;
+      var elName = el.name || el.id || el.type;
+      var category = 'interaction';
+      var action = 'form: ' + formName;
+      var label = elName + ':' + el.type;
+
+      // Google Tag Manager
+      analyticsEvent(category, action, label);
+    }
+  };
+
+  $(document).ready(function() {
+    window.SC.dataLayer.enqueue('SCDataLayer', 'USER_VISITS', { previouslyPurchasedProducts: 'false' });
+
+
+  });
+</script>
+
+
+
+  <link rel="canonical" href="https://stacksocial.com/sales/the-fundamentals-of-real-estate-investment-bundle" />
+<style>#sc-hero-unit { background-image:url(https://cdnp0.stackassets.com/01791504d6fa9008e4b33b103ecf9adea664ca40/store/12e69b049bd14f704d18ab46eae4f56ba3eaf4eca2ab4628d70167d9d626/sale_31347_special_sale_banner_bg.jpg) !important }</style>
+
+<script type="text/javascript">
+var _user_id = '';
+var _session_id = '29bff2381f1c52e4580575f8c202d3df';
+
+var _sift = window._sift = window._sift || [];
+_sift.push(['_setAccount', 'ef01e3d959']);
+_sift.push(['_setUserId', _user_id]);
+_sift.push(['_setSessionId', _session_id]);
+_sift.push(['_trackPageview']);
+(function() {
+  function ls() {
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.async = true;
+    e.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'cdn.siftscience.com/s.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+  }
+  if (window.attachEvent) {
+    window.attachEvent('onload', ls);
+  } else {
+    window.addEventListener('load', ls, false);
+  }
+})();
+</script>
+
+
+<input type="hidden" class="js-jetlore-constructor-tag" id="user_email" value="">
+
+  </head>
+  <body id="stacksocial-wrapper" class="publisher-engadget" ng-app="stackApp" ng-class="[cartStateBodyClass]">
+    <a href="https://iar40lbead.execute-api.us-east-1.amazonaws.com/ProdStage" rel="nofollow" style="display: none" aria-hidden="true">nofollow</a>
+    <script type="text/javascript">
+  // dimension1 is reserved for legacy PartnerType and is unused
+  window.SC.code.analytics.customDimension(2, 'User Status', "logged_out");
+
+    window.SC.code.analytics.customDimension(3, "Publisher", "GDGT");
+    window.SC.code.analytics.customDimension(4, "Publisher Persona", "General Tech News");
+
+
+
+
+
+</script>
+
+    <!-- StackCommerce GTM Container -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2BQKM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2BQKM');
+  </script>
+
+      <!-- Global site tag (gtag.js) - Google Ads: CONVERSION_ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-763927253"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config','AW-763927253');
+  </script>
+
+
+    <input type="hidden" name="current_publisher" id="current_publisher" value="185" data-name="GDGT" data-checkout-upsell-bottom-id="9426" />
+
+    <input type="hidden" name="current_user_favorites" id="current_user_favorites" data-sale-ids="[]" data-sales-url="https://deals.gdgt.com/v0/sales" />
+    <input type="hidden" name="api_url" id="api_url" value="https://deals.gdgt.com/" />
+    <input type="hidden" name="current_cart" id="current_cart" data-current-cart="{&quot;items&quot;:[]}" />
+    <input type="hidden" name="publisher_upsell_sales" id="publisher_upsell_sales" data-sales="[{&quot;from_jetlore&quot;:true,&quot;exchange_rate&quot;:1.0},{&quot;from_jetlore&quot;:true,&quot;exchange_rate&quot;:1.0},{&quot;from_jetlore&quot;:true,&quot;exchange_rate&quot;:1.0},{&quot;from_jetlore&quot;:true,&quot;exchange_rate&quot;:1.0}]" data-max-quantity="4" />
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1">
+  <defs>
+    <symbol id="icon-heart" viewBox="0 0 75 75">
+      <path class="path1" d="M18,38.5L36.2,57c0.3,0.3,0.8,0.5,1.3,0.5c0.5,0,1-0.2,1.3-0.5l9.1-9.2c3-3.1,6.1-6.1,9.1-9.2c4.7-4.8,4.7-12.6,0-17.4c-2.3-2.3-5.4-3.6-8.7-3.6c-3.3,0-6.4,1.3-8.7,3.6l-2,2l-2-2.1c-2.3-2.3-5.4-3.6-8.7-3.6c-3.3,0-6.4,1.3-8.7,3.6C13.3,25.9,13.3,33.7,18,38.5z M20.7,23.5c1.7-1.7,3.8-2.6,6.1-2.6c2.3,0,4.4,0.9,6.1,2.6l3.4,3.4c0.3,0.3,0.8,0.5,1.3,0.5c0.5,0,1-0.2,1.3-0.5l3.3-3.4c1.7-1.7,3.8-2.6,6.1-2.6c2.3,0,4.4,0.9,6.1,2.6c3.4,3.5,3.4,9.1,0,12.6L37.5,53.2l-0.1-0.1l-16.7-17C17.3,32.6,17.3,27,20.7,23.5z" />
+    </symbol>
+
+    <symbol id="icon-circle-heart" viewBox="0 0 75 75">
+      <path class="path1" d="M23.1,40.5 L36.525,54.6 C36.75,54.825 37.125,54.975 37.5,54.975 C37.875,54.975 38.25,54.825 38.475,54.6 L45.15,47.55 C47.4,45.225 49.65,42.825 51.825,40.5 C55.35,36.825 55.35,30.825 51.825,27.15 C50.1,25.35 47.85,24.375 45.375,24.375 C42.9,24.375 40.65,25.35 38.925,27.15 L37.425,28.725 L35.925,27.15 C34.2,25.35 31.95,24.375 29.475,24.375 C27,24.375 24.75,25.35 23.025,27.15 C19.65,30.9 19.65,36.825 23.1,40.5 Z M25.05,29.025 C26.25,27.75 27.9,27 29.55,27 C31.2,27 32.85,27.675 34.05,29.025 L36.525,31.65 C36.75,31.875 37.125,32.025 37.5,32.025 C37.875,32.025 38.25,31.875 38.475,31.65 L40.95,29.025 C42.15,27.75 43.8,27 45.45,27 C47.1,27 48.75,27.675 49.95,29.025 C52.5,31.65 52.5,36 49.95,38.7 L37.5,51.825 L37.425,51.675 L25.05,38.7 C22.5,36 22.5,31.725 25.05,29.025 Z"></path>
+      <path class="path2" d="M37.5,74.625 C17.025,74.625 0.375,57.975 0.375,37.5 C0.375,17.025 17.025,0.375 37.5,0.375 C57.975,0.375 74.625,17.025 74.625,37.5 C74.625,57.975 57.975,74.625 37.5,74.625 Z M37.5,2.625 C18.3,2.625 2.625,18.3 2.625,37.5 C2.625,56.7 18.3,72.375 37.5,72.375 C56.7,72.375 72.375,56.7 72.375,37.5 C72.375,18.3 56.7,2.625 37.5,2.625 Z"></path>
+    </symbol>
+
+    <symbol id="icon-circle-heart-filled" viewBox="0 0 75 75">
+      <path class="path1" d="M23.1,40.5 L36.525,54.6 C36.75,54.825 37.125,54.975 37.5,54.975 C37.875,54.975 38.25,54.825 38.475,54.6 L45.15,47.55 C47.4,45.225 49.65,42.825 51.825,40.5 C55.35,36.825 55.35,30.825 51.825,27.15 C50.1,25.35 47.85,24.375 45.375,24.375 C42.9,24.375 40.65,25.35 38.925,27.15 L37.425,28.725 L35.925,27.15 C34.2,25.35 31.95,24.375 29.475,24.375 C27,24.375 24.75,25.35 23.025,27.15 C19.65,30.9 19.65,36.825 23.1,40.5 Z"></path>
+      <path class="path2" d="M37.5,74.625 C17.025,74.625 0.375,57.975 0.375,37.5 C0.375,17.025 17.025,0.375 37.5,0.375 C57.975,0.375 74.625,17.025 74.625,37.5 C74.625,57.975 57.975,74.625 37.5,74.625 Z M37.5,2.625 C18.3,2.625 2.625,18.3 2.625,37.5 C2.625,56.7 18.3,72.375 37.5,72.375 C56.7,72.375 72.375,56.7 72.375,37.5 C72.375,18.3 56.7,2.625 37.5,2.625 Z"></path>
+    </symbol>
+
+    <symbol id="icon-cart" viewBox="0 0 75 75">
+      <path class="path1" d="M47.8,52.5c1.3,0,2.3,1,2.3,2.3c0,1.3-1,2.3-2.3,2.3s-2.3-1-2.3-2.3C45.5,53.5,46.5,52.5,47.8,52.5z M30.4,52.5c1.3,0,2.3,1,2.3,2.3c0,1.3-1,2.3-2.3,2.3c-1.3,0-2.3-1-2.3-2.3C28.1,53.5,29.1,52.5,30.4,52.5z M47.8,49.1c-3.2,0-5.8,2.6-5.8,5.8c0,3.2,2.6,5.8,5.8,5.8s5.8-2.6,5.8-5.8C53.6,51.7,50.9,49.1,47.8,49.1z M30.4,49.1c-3.2,0-5.8,2.6-5.8,5.8c0,3.2,2.6,5.8,5.8,5.8s5.8-2.6,5.8-5.8C36.2,51.7,33.6,49.1,30.4,49.1z M23.2,23.8h34.5L55,35.4l-26.3,2.1L23.2,23.8z M11.4,14.6c-1,0-1.7,0.8-1.7,1.7s0.8,1.7,1.7,1.7h5.8c2.9,7.1,5.7,14.2,8.5,21.2l-2.6,6.3c-0.2,0.5-0.2,1.2,0.2,1.6c0.3,0.5,0.9,0.8,1.4,0.8h28.9c0.9,0,1.8-0.8,1.8-1.7c0-0.9-0.8-1.7-1.8-1.7H27.3l1.5-3.6l27.8-2.2c0.7-0.1,1.4-0.6,1.6-1.3l3.5-15c0.2-1-0.7-2.1-1.7-2.1H21.8l-1.9-4.7c-0.3-0.6-0.9-1.1-1.6-1.1H11.4z" />
+    </symbol>
+
+    <symbol id="icon-search" viewBox="0 0 75 75">
+      <path class="path1" d="M34.1,17.5c-4.4,0-8.6,1.7-11.7,4.9c-3.1,3.1-4.9,7.3-4.9,11.7c0,4.4,1.7,8.6,4.9,11.7c3.1,3.1,7.3,4.9,11.7,4.9c3.7,0,7.2-1.2,10.1-3.5l0.2-0.2l10,10c0.7,0.7,1.9,0.7,2.6,0c0.7-0.7,0.7-1.9,0-2.6v0l-10-10l0.2-0.2c5.1-6.6,4.5-16-1.4-21.9C42.6,19.2,38.5,17.5,34.1,17.5 M43.2,43.2c-2.4,2.4-5.7,3.8-9.1,3.8h0c-3.4,0-6.7-1.3-9.1-3.8c-2.4-2.4-3.8-5.7-3.8-9.1c0-3.4,1.3-6.7,3.8-9.1c2.4-2.4,5.7-3.8,9.1-3.8c3.4,0,6.7,1.3,9.1,3.8c2.4,2.4,3.8,5.7,3.8,9.1S45.6,40.7,43.2,43.2" />
+    </symbol>
+
+    <symbol id="icon-ships-fast" viewBox="0 0 100 100">
+      <path class="st0" d="M30.1,39.2L30.1,39.2l-12.3,0c0,0,0,0,0,0c-0.3,0-0.7,0.1-0.9,0.4c-0.2,0.2-0.4,0.6-0.4,0.9
+        c0,0.3,0.1,0.7,0.4,0.9c0.2,0.2,0.6,0.4,0.9,0.4l12.3,0c0.4,0,0.7-0.1,0.9-0.4c0.3-0.2,0.4-0.6,0.4-0.9c0-0.3-0.1-0.7-0.4-0.9
+        C30.8,39.3,30.5,39.2,30.1,39.2z"/>
+      <path class="st0" d="M31.1,35.2c0.3-0.2,0.4-0.6,0.4-0.9c0-0.3-0.1-0.7-0.4-0.9c-0.3-0.2-0.6-0.4-0.9-0.4l0,0l0,0H8.3
+        c-0.4,0-0.7,0.1-0.9,0.4C7.1,33.6,7,33.9,7,34.3c0,0.3,0.1,0.7,0.4,0.9c0.3,0.2,0.6,0.4,0.9,0.4l0,0l0,0h21.8
+        C30.5,35.6,30.8,35.4,31.1,35.2z"/>
+      <path class="st0" d="M75.4,36.1l-0.1-0.5c-0.4-1.5-1.9-2.6-3.4-2.6H38.4c-2,0-3.6,1.6-3.6,3.6v21.7c0,2,1.6,3.6,3.6,3.6h4.4l0.1,0.5
+        c0.8,2.7,3.3,4.6,6.2,4.6c2.8,0,5.4-1.9,6.2-4.6l0.1-0.5h17.6l0.1,0.5c0.8,2.7,3.4,4.6,6.2,4.6c2.8,0,5.4-1.9,6.2-4.6l0.1-0.5h4.5
+        c1.5,0,2.8-1.3,2.8-2.8V48.9c0-1.5-1.3-2.8-2.8-2.8h-0.7L89,45.1c-0.7-1.4-1.5-3.1-2.5-4.7c-0.7-1.2-1.4-2.1-2.1-2.8
+        c-0.7-0.8-1.5-1.5-2.8-1.5H75.4z M53,60.6c0,2.2-1.7,3.9-3.9,3.9c-2.2,0-3.9-1.7-3.9-3.9c0-2.2,1.7-3.9,3.9-3.9
+        C51.4,56.7,53,58.4,53,60.6L53,60.6z M72.8,59.3H55.5l-0.1-0.5c-0.8-2.8-3.3-4.7-6.2-4.7c-2.8,0-5.4,1.9-6.2,4.7l-0.1,0.5h-4.4
+        c-0.5,0-1-0.5-1-1V36.6c0-0.6,0.4-1,1-1l33.4,0c0.5,0,1,0.5,1,1V59.3z M79.4,64.4c-2.2,0-3.9-1.7-3.9-3.9c0-2.2,1.8-3.9,3.9-3.9
+        c2.3,0.1,3.9,1.7,3.9,3.9C83.3,62.8,81.6,64.4,79.4,64.4z M90.4,48.7v10.6h-4.7l-0.1-0.5c-0.6-2.8-2.9-4.5-6.2-4.6
+        c-1,0-2.1,0.3-3,0.7l-1,0.5v-6.7H90.4z M82.6,39.3c0.5,0.5,1.1,1.4,1.7,2.4c0.6,1,1.2,2.1,1.9,3.5l0.5,1H75.4v-7.5h6.1l0.2,0
+        l0.2,0.1C82,38.9,82.3,39,82.6,39.3z"/>
+    </symbol>
+
+    <symbol id="icon-facebook" viewBox="0 0 100 100">
+      <path d="M94.48,0h-89A5.52,5.52,0,0,0,0,5.52v89A5.52,5.52,0,0,0,5.52,100h47.9V61.33h-13V46.19h13V35.06c0-12.91,7.89-20,19.41-20a104.57,104.57,0,0,1,11.64.6V29.2h-8c-6.25,0-7.46,3-7.46,7.35v9.64H84l-2,15.14H69V100H94.48A5.52,5.52,0,0,0,100,94.48v-89A5.52,5.52,0,0,0,94.48,0Z" />
+    </symbol>
+
+  </defs>
+</svg>
+
+
+    <div class="container-wrapper">
+      <div class="container-site">
+        <script>
+  window.current_publisher_code = "engadget";
+</script>
+
+
+<div class="hello-bar js-hello-bar hidden-xs hidden-sm">
+  <div class="container">
+      <div class="pull-left">
+        <a class="back-link" href="http://engadget.com">
+          <i class='fa fa-sm fa-chevron-left back-to-publisher'></i> back to engadget.com
+</a>      </div>
+
+
+      <div class="">
+        <a class="hello-bar-text js-hello-bar" data-sale-slug="radix-tech-domain-10-year-subscription" data-track-click="{&quot;category&quot;:&quot;HelloBar&quot;,&quot;label&quot;:&quot;link&quot;}" impression_list="hello bar" href="/newest-sales">
+          You&#39;ll love what just came in - shop our newest sales here.
+          <i class="fa fa-chevron-right"></i>
+</a>      </div>
+
+    <a class="referal-link" data-track-click="{&quot;category&quot;:&quot;HelloBar&quot;,&quot;label&quot;:&quot;refer link&quot;}" href="/user/credits">
+      Give $50,
+      Get $10
+</a>  </div>
+</div>
+
+<nav id="main-navbar"
+  class="navbar navbar-default navbar-fixed-top navbar-master-without-stackbar navbar-master js-navbar-master"
+  role="navigation"
+  data-navbar>
+
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle navbar-menu-button pull-left" type="button" aria-label="Toggle Navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar icon-bar-middle"></span>
+        <span class="icon-bar icon-bar-middle"></span>
+        <span class="icon-bar icon-bar-middle"></span>
+      </button>
+
+      <div class="navbar-toggle mobile-cart-icon mini-cart">
+        <mini-cart-button></mini-cart-button>
+      </div>
+
+      <div class="navbar-toggle mobile-search-icon js-toggleSearchNav">
+        <svg class="svg-icon search-input-icon">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </div>
+
+      <div class="navbar-brand-container">
+        <a class="navbar-brand" href="/">
+            <img class="navbar-logo hidden-xs hidden-sm" alt="GDGT" src="https://cdnp2.stackassets.com/f184a332a16b3465fe15d47e414db661809fc113/store/dc646adda93430b5695afa5021be1b84dc6f192a62ef02ec199daae41afc/_logo-desktop.png" />
+
+    <img class="navbar-logo hidden-md hidden-lg" alt="GDGT Mobile" src="https://cdnp3.stackassets.com/34c3882da92685ac3db36d62c1c4047f4089bf34/store/e3f59480e75f54d0c6e844661ea4457b20a38bc88c00e4502e7e03305de1/_logo-mobile.png" />
+
+</a>      </div>
+    </div>
+
+    <div class="navbar-collapse">
+      <div class="navbar-center">
+        <div class="hidden-xs hidden-sm navbar-search">
+          <form class="form-inline js-search-form" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <div class="search-container">
+              <input type="text" name="query" id="query" value="" placeholder="Search" class="search-input" aria-label="search" required="required" />
+              <i class="fa fa-search search-input-icon"></i>
+            </div>
+</form>        </div>
+
+        <ul class="nav navbar-nav navbar-right nav-account hidden-xs hidden-sm">
+          <li class="heart-icon-nav">
+            <a class="nav-account-link js-wishlist-nav" aria-label="My Wishlist" href="/user?show=home-tab">
+              <svg class="svg-icon">
+                <use xlink:href="#icon-heart"></use>
+              </svg>
+</a>          </li>
+          <li class="cart-icon-nav">
+            <mini-cart-button></mini-cart-button>
+          </li>
+            <li>
+    <a class="nav-account-link" href="/sign_in?source=signup_page">Login</a>
+  </li>
+
+        </ul>
+      </div>
+
+      
+<ul class="nav navbar-nav navbar-main js-navbar-main nav-4-items">
+  
+    
+
+      
+
+          <li class="dropdown nav-item nav-item-container js-mobile-dropdown ">
+            <a class="mobile-dropdown-toggle nav-item-link js-root-menu-item" role="button" href="#">
+              Shop
+</a>            <div class="dropdown-menu mega-menu" role="menu">
+              <div class="container">
+                <ul class="list-unstyled menu-list">
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <span class="subnav-menu-label mobile-dropdown-toggle">
+                            Featured
+                          </span>
+
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/newest-sales">
+                                      New Arrivals
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/best-sellers">
+                                      Best Sellers
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/ending-soon">
+                                      Ending Soon
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifetime-deals">
+                                      Lifetime Subscriptions
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/bundles">
+                                      Online Course Bundles
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/apps-software">
+                            Software
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software-backup-storage">
+                                      Backup + Storage
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software-design">
+                                      Design
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software-entertainment">
+                                      Entertainment
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software-productivity">
+                                      Productivity
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software-security">
+                                      VPN + Security
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/apps-software">
+                                      View All (150+)
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/gear-gadgets">
+                            Gear + Gadgets
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-auto">
+                                      Auto
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-diy">
+                                      DIY
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-computer-tablets">
+                                      Electronics
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-gaming-toys">
+                                      Gaming + Toys
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-power">
+                                      Power + Charging
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets-sound">
+                                      Speakers + Headphones
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/gear-gadgets">
+                                      View All (450+)
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/online-courses">
+                            Online Courses
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses-business">
+                                      Business
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses-Design">
+                                      Design
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses-development">
+                                      Development
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses-it-security">
+                                      IT + Security
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses-marketing">
+                                      Marketing
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/online-courses">
+                                      View All (800+)
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/lifestyle">
+                            Lifestyle
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/every-day-carry">
+                                      Everyday Carry
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifestyle-health-fitness">
+                                      Fitness + Health
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifestyle-home">
+                                      Home
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifestyle-kitchen">
+                                      Kitchen
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifestyle-travel">
+                                      Travel
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/lifestyle">
+                                      View All (300+)
+</a>                                  </li>
+                          </ul>
+                      </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      
+
+          <li class="dropdown nav-item nav-item-container js-mobile-dropdown ">
+            <a class="mobile-dropdown-toggle nav-item-link js-root-menu-item" role="button" href="#">
+              Best Sellers
+</a>            <div class="dropdown-menu mega-menu" role="menu">
+              <div class="container">
+                <ul class="list-unstyled menu-list">
+                    
+                      <li class="subnav-menu ">
+                          <a class="subnav-menu-label js-child-menu-item " href="/collections/holiday-best-sellers-2019">
+                            Best Sellers Up to 85% off
+</a>
+                      </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      
+
+          <li class="dropdown nav-item nav-item-container js-mobile-dropdown ">
+            <a class="mobile-dropdown-toggle nav-item-link js-root-menu-item" role="button" href="#">
+              Brands
+</a>            <div class="dropdown-menu mega-menu" role="menu">
+              <div class="container">
+                <ul class="list-unstyled menu-list">
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/featured-brands">
+                            Featured
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/collections/vendor-spotlight?sort=best_sellers">
+                                      Vendor Spotlight
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <a class="subnav-menu-label js-child-menu-item mobile-dropdown-toggle" href="/collections/gear-gadgets-computer-tablets">
+                            Electronics
+</a>
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/apple?sort=best_sellers">
+                                      Apple
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/lenovo">
+                                      Lenovo
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/lg">
+                                      LG
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/samsung">
+                                      Samsung
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/sennheiser">
+                                      Sennheiser
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <span class="subnav-menu-label mobile-dropdown-toggle">
+                            Sofware
+                          </span>
+
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/sales/babbel-language-learning-lifetime-subscription">
+                                      Babbel
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/sales/nordvpn-3-yr-subscription-2">
+                                      NordVPN
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/sales/rosetta-stone-lifetime-subscription-spanish">
+                                      Rosetta Stone
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/sales/windscribe-vpn-pro-subscriptions-1yr">
+                                      Windscribe
+</a>                                  </li>
+                          </ul>
+                      </li>
+                    
+                      <li class="subnav-menu subnav-menu-group dropdown js-mobile-dropdown">
+                          <span class="subnav-menu-label mobile-dropdown-toggle">
+                            Top Instructors
+                          </span>
+
+                          <ul class="list-unstyled js-nav-filters">
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/chris-haroun">
+                                      Chris Haroun
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/brands/rob-percival">
+                                      Rob Percival
+</a>                                  </li>
+                              
+                                  <li class="subnav-menu-items">
+                                    <a class="js-third-level-menu-item" href="/sales/the-canon-dslr-photography-a-z-course">
+                                      Phil Ebiner
+</a>                                  </li>
+                          </ul>
+                      </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      
+
+          <li class="nav-item ">
+            <a class="nav-item-link" href="/newest-sales">New Arrivals</a>
+          </li>
+
+  <li class="nav-username-placeholder hidden-sm hidden-xs">
+      Login
+  </li>
+
+  <li class="nav-item visible-xs visible-sm">
+  <a class="nav-item-link" href="/user?show=home-tab">Wishlist</a>
+</li>
+  <li class="nav-item visible-xs visible-sm">
+    <a class="nav-item-link" href="/sign_in?source=signup_page">Login</a>
+  </li>
+
+</ul>
+
+    </div>
+  </div>
+
+  <div id="search-dropdown-bar"
+    class="hidden-md hidden-lg navbar-search-mobile container js-search-dropdown-bar">
+    <form class="form-inline js-search-form" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <input type="text" name="query" id="mobile-search-box" value="" placeholder="Search" class="form-control search-input js-mobile-search-box" />
+</form>  </div>
+
+  
+</nav>
+
+<div id="main-navbar-phantom" class="js-main-navbar-phantom"></div>
+<div class="mobile-nav-overlay"></div>
+
+
+<mini-cart></mini-cart>
+
+        
+
+        <div class="site-contents ">
+          <div class="loyalty-callout loyalty-callout--bar loyalty-callout--bundle ">
+  <div class="loyalty-callout__content">
+    <div class="loyalty-callout__icon">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 35 34" style="enable-background:new 0 0 35 34;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:currentColor;}
+</style>
+<g>
+	<path class="st0" d="M28.5,2.5h-7.6c-1.2,0-2.7,0.6-3.5,1.4L2.7,18.5C2.3,19,2,19.6,2,20.3c0,0.7,0.3,1.3,0.7,1.8l8.6,8.6
+		c0.5,0.5,1.1,0.7,1.8,0.7v0c0.7,0,1.3-0.3,1.8-0.7l14.6-14.6c0.8-0.8,1.4-2.3,1.4-3.5V5C31,3.6,29.9,2.5,28.5,2.5z M29.3,12.7
+		c0,0.7-0.5,1.8-1,2.3L13.8,29.6c-0.2,0.2-0.4,0.2-0.6,0.2c-0.2,0-0.4-0.1-0.6-0.2l-8.6-8.6c-0.2-0.2-0.2-0.4-0.2-0.6
+		s0.1-0.4,0.2-0.6L18.5,5.2c0.5-0.5,1.6-1,2.3-1h0h7.6c0.5,0,0.8,0.4,0.8,0.8V12.7z"/>
+	<path class="st0" d="M25.1,5.9c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5C27.6,7,26.5,5.9,25.1,5.9z M25.1,9.3
+		c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.4-0.8,0.8-0.8c0.5,0,0.8,0.4,0.8,0.8C25.9,8.9,25.5,9.3,25.1,9.3z"/>
+</g>
+</svg>
+
+    </div>
+    <span class="loyalty-callout__text">
+      Get $1 credit for every $25 spent!
+    </span>
+  </div>
+</div>
+
+
+
+<div id="sc-hero-unit" class="hero-unit-bundle ">
+  <div class="container">
+    <div class="row">
+      <header class="col-xs-12 header">
+        <div class="row">
+         <article class="col-xs-12">
+           <h1>The Fundamentals of Real Estate Investment Bundle</h1>
+           <h4 class="hidden-xs hidden-sm">Enter the World of Real Estate &amp; Make Profitable Investments with 17 Hours of Content on REIT Fundamentals, Types, Frameworks, and More</h4>
+         </article>
+        </div>
+      </header>
+    </div>
+
+    <div class="row">
+      <article class="col-xs-12 col-md-7 col-lg-6">
+        <div class="row">
+          <div class="sc-hero-unit-clock col-xs-12 visible-xs visible-sm">
+            <i class="icon-clock"></i>
+            Ending In: <abbr class="js-interval" data-use-interval="true" data-starts-at="2020-07-24T07:00:01Z" data-ends-at="2120-07-25T06:59:59Z"></abbr>
+          </div>
+          <div class="sc-hero-unit-buy-button col-md-7 col-xs-12">
+            <div class="row">
+              <ng-form class="buy-form form-horizontal js-sc-purchase-form" data-type="Bundle" data-price="25.0" data-name="The Fundamentals of Real Estate Investment Bundle" data-ids="[31347]" role="form" ng-controller="AddToCartCtrl">
+
+  <input type="hidden" name="sale_id" id="sale_id" value="31347" data-sale-slug="the-fundamentals-of-real-estate-investment-bundle" />
+
+
+  <div class="col-md-8 col-xs-12 col-lg-9 ">
+    <add-to-cart-button class="hidden-xs hidden-sm btn btn-lg btn-block btn-success js-purchase-submit form-control additem" ng-click="addItem()" ng-disabled="addingToCart" data-button-type="buy_now">
+      Add to Cart - $25
+</add-to-cart-button>    <add-to-cart-button class="visible-xs visible-sm btn btn-lg btn-success js-sc-sale-form-submit-mobile form-control" ng-click="addItem()" ng-disabled="addingToCart" data-button-type="buy_now">
+      <span>
+        Add to Cart - $25
+      </span>
+</add-to-cart-button>  </div>
+
+    <div class="hidden-md hidden-lg select-mobile">
+      <select name="quantity" id="quantity" class="form-control js-quantity" data-price="2500" data-recurring="false" ng-model="quantity"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+    </div>
+
+    <div class="select-right hidden-xs hidden-sm col-md-4 col-lg-3">
+      <select name="quantity" id="quantity" class="form-control js-quantity" data-price="2500" data-recurring="false" ng-model="quantity"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+    </div>
+</ng-form>
+<div class="buy-now-fixed js-sc-sale-buy-now-fixed">
+  <div class="js-no-variant" data-type="Bundle" data-toggle="#sc-purchase-form"><add-to-cart-button class="btn btn-success btn-lg btn-block js-no-variant-text" data-button-type="buy_now">Add to Cart ($25)</add-to-cart-button></div>
+</div>
+
+            </div>
+          </div>
+            <div class="col-md-5 col-xs-12">
+              <div class="sc-hero-unit-promotion">
+                  <div class="retail-price">$1,000</div>
+                  <div class="price-drop-message">
+                    97% off
+</div>              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sc-hero-unit-clock hidden-xs hidden-sm pull-left">
+              <i class="icon-clock"></i>
+              Ending In: <abbr class="js-interval" data-use-interval="true" data-starts-at="2020-07-24T07:00:01Z" data-ends-at="2120-07-25T06:59:59Z"></abbr>
+            </div>
+            <a class="sc-favorite-icon js-favorite js-favorite-track primary-color " id="favorite-bundle" data-sale-name="The Fundamentals of Real Estate Investment Bundle" data-sale-id="31347" data-category="Sale" href="">
+  <i class="fa fa-heart" aria-hidden="true"></i>
+  <i class="fa fa-heart-o" aria-hidden="true"></i>
+
+  <span class="text-capitalize">
+      wishlist
+  </span>
+</a>
+              <div class="bundle-star-rating ratings-widget js-ratings-widget">
+                <div class="bundle-star-rating-content">
+                  <div class="js-ratings-widget-component"
+     data-sale-ratings-path="/v0/sale_ratings"
+     data-sale-id="31347"
+     data-sale-name="The Fundamentals of Real Estate Investment Bundle">
+</div>
+
+<script class="js-ratings-widget-template" type="text/html">
+  <div class="js-ratings-widget-scroll-to-link">
+    <div class="rating">
+    <input
+      id="star_rating10"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 10 }}" />
+    <label
+      for="star_rating10"
+      class="full">
+    </label>
+    <input
+      id="star_rating9"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 9 }}" />
+    <label
+      for="star_rating9"
+      class="half">
+    </label>
+    <input
+      id="star_rating8"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 8 }}" />
+    <label
+      for="star_rating8"
+      class="full">
+    </label>
+    <input
+      id="star_rating7"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 7 }}" />
+    <label
+      for="star_rating7"
+      class="half">
+    </label>
+    <input
+      id="star_rating6"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 6 }}" />
+    <label
+      for="star_rating6"
+      class="full">
+    </label>
+    <input
+      id="star_rating5"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 5 }}" />
+    <label
+      for="star_rating5"
+      class="half">
+    </label>
+    <input
+      id="star_rating4"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 4 }}" />
+    <label
+      for="star_rating4"
+      class="full">
+    </label>
+    <input
+      id="star_rating3"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 3 }}" />
+    <label
+      for="star_rating3"
+      class="half">
+    </label>
+    <input
+      id="star_rating2"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 2 }}" />
+    <label
+      for="star_rating2"
+      class="full">
+    </label>
+    <input
+      id="star_rating1"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 1 }}" />
+    <label
+      for="star_rating1"
+      class="half">
+    </label>
+</div>
+
+
+    <span class="voters">({{ total_count }})</span>
+  </div>
+</script>
+
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            
+<div class="notification-subscription" data-notification-subscription="true" data-tracking-attributes="{&quot;subscription_sale_id&quot;:31347}">
+  <button class="notification-subscription__cta primary-color">
+    <i class="fa fa-bell-o"></i>
+    <span class="subscribe-text">Stay up-to-date on exclusive new deals!</span>
+  </button>
+</div>
+          </div>
+        </div>
+      </article>
+        <article class="hidden-xs col-lg-6 col-md-5 col-offset-md-1">
+          <div class="bubble-bundle-page-hero visible-md visible-lg text-right">
+            <div class="bubble">
+  <div class="title">Courses</div>
+  <div class="value">5</div>
+</div>
+
+<div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">181</div>
+</div>
+
+<div class="bubble">
+  <div class="title">Enrolled</div>
+  <div class="value">1,945</div>
+</div>
+
+
+          </div>
+        </article>
+    </div>
+  </div>
+</div>
+
+<div class="container sc-bundle-page" data-sale="{&quot;id&quot;:31347,&quot;name&quot;:&quot;The Fundamentals of Real Estate Investment Bundle&quot;,&quot;title&quot;:&quot;Enter the World of Real Estate \u0026 Make Profitable Investments with 17 Hours of Content on REIT Fundamentals, Types, Frameworks, and More&quot;,&quot;price_in_cents&quot;:2500,&quot;categories&quot;:[{&quot;name&quot;:&quot;Real Estate&quot;}]}" data-track-detail="{&quot;list&quot;:&quot;bundle page&quot;}" data-sales-show-page="true" data-page-bundlePage="true" id="sc-bundle-page">
+    <section>
+      <div class="bubble-bundle-page-header text-center visible-xs visible-sm">
+        <div class="bubble">
+  <div class="title">Courses</div>
+  <div class="value">5</div>
+</div>
+
+<div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">181</div>
+</div>
+
+<div class="bubble">
+  <div class="title">Enrolled</div>
+  <div class="value">1,945</div>
+</div>
+
+
+      </div>
+    </section>
+  <section>
+    <header>
+      <div class="bundle-page-heading">
+        <h4>What's Included</h4>
+      </div>
+    </header>
+    <section class="row">
+      <div class="products-grid">
+        <div class="products-grid-list">
+    <div class="pagination-table-row products-grid-product anchor-link"
+      data-toggle=".product-detail-header"
+      href="#product-item-41910">
+
+      <div class="products-grid-logo">
+        <img alt="Pre-Investing: Before Investing in Real Estate - Product Image" src="https://cdnp1.stackassets.com/41262b5ea370c5f39b1d7edc74adddc3285288d4/store/opt/204/153/647e5ce0c92ac76143b56d919abde5e8762b2b2e536dd6ba3f752b3c8b1a/product_41910_product_shots1.jpg" />
+      </div>
+      <div class="products-grid-details ">
+        <span class="products-grid-name">Pre-Investing: Before Investing in Real Estate</span>
+          <div class="products-grid-price">$200 Value</div>
+      </div>
+    </div>
+    <div class="pagination-table-row products-grid-product anchor-link"
+      data-toggle=".product-detail-header"
+      href="#product-item-41909">
+
+      <div class="products-grid-logo">
+        <img alt="Fundamentals of Real Estate Investment Analysis - Product Image" src="https://cdnp1.stackassets.com/0e8f08f690f31869629b00cf7c4ea4cae6db31ed/store/opt/204/153/220206861deb1b48611d38b942192c1739b2d9d3a215725d0b1af535b328/product_41909_product_shots1.jpg" />
+      </div>
+      <div class="products-grid-details ">
+        <span class="products-grid-name">Fundamentals of Real Estate Investment Analysis</span>
+          <div class="products-grid-price">$200 Value</div>
+      </div>
+    </div>
+    <div class="pagination-table-row products-grid-product anchor-link"
+      data-toggle=".product-detail-header"
+      href="#product-item-41911">
+
+      <div class="products-grid-logo">
+        <img alt="Introduction to Commercial Real Estate Analysis - Product Image" src="https://cdnp0.stackassets.com/82d14f5d33c23c2843f5959936ce2569ba6eec27/store/opt/204/153/90fad2bcb1ff1ff654faafd3ae35aec84cb07cc0b74d1fee3a308a17408f/product_41911_product_shots1.jpg" />
+      </div>
+      <div class="products-grid-details ">
+        <span class="products-grid-name">Introduction to Commercial Real Estate Analysis</span>
+          <div class="products-grid-price">$200 Value</div>
+      </div>
+    </div>
+    <div class="pagination-table-row products-grid-product anchor-link"
+      data-toggle=".product-detail-header"
+      href="#product-item-41912">
+
+      <div class="products-grid-logo">
+        <img alt="How to Invest with Partners in Real Estate - Product Image" src="https://cdnp1.stackassets.com/990ba56884d25d5bb2203477607175fadc64321e/store/opt/204/153/fbb04d2389d769ed2a7d726bdfcd87376fb6baea12a36c86e023842ae3ab/product_41912_product_shots1.jpg" />
+      </div>
+      <div class="products-grid-details ">
+        <span class="products-grid-name">How to Invest with Partners in Real Estate</span>
+          <div class="products-grid-price">$200 Value</div>
+      </div>
+    </div>
+    <div class="pagination-table-row products-grid-product anchor-link"
+      data-toggle=".product-detail-header"
+      href="#product-item-41913">
+
+      <div class="products-grid-logo">
+        <img alt="How to Analyze a Wholesale Deal in Real Estate - Product Image" src="https://cdnp2.stackassets.com/7c29fbae4fb9aceefb9988a27dcda52f5b669230/store/opt/204/153/4f4c75b18969de9cc18a054186cce30f9eba59e9181a07d1b77bb9c7321c/product_41913_product_shots1.jpg" />
+      </div>
+      <div class="products-grid-details ">
+        <span class="products-grid-name">How to Analyze a Wholesale Deal in Real Estate</span>
+          <div class="products-grid-price">$200 Value</div>
+      </div>
+    </div>
+</div>
+
+      </div>
+    </section>
+  </section>
+
+  <hr class="hidden-xs hidden-sm">
+
+  <section class="row">
+    <div class="bundle-summary-container js-pagination-container view-all">
+  <div class="product-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-8">
+          <h4>Product Details</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-detail-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+            <div id="product-item-41910" class="js-product-details row pagination-details">
+              <div class="col-md-6">
+                <div id="sc-product-image-carousel41910" class="sc-product-image-carousel carousel slide" data-ride="carousel" data-toughness="0.25" data-interval=false>
+  
+      <picture><source media="(max-width: 479px)" srcset="https://cdnp3.stackassets.com/58f649d6d267ebbef785a933e6499c0b10918ffb/store/opt/450/225/419ec49502b0bee1aa6afad113627777fb9ae08abb219af886e8e1911d09/product_41910_product_shot_wide.jpg" /><source media="(min-width: 480px) and (max-width: 991px)" srcset="https://cdnp3.stackassets.com/dc457867b82f0a1e52b4326923877c087818dd8f/store/opt/419ec49502b0bee1aa6afad113627777fb9ae08abb219af886e8e1911d09/product_41910_product_shot_wide.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="https://cdnp3.stackassets.com/554d6fc3869dc6bc097e98073f722d9e1bff9954/store/opt/489/244/419ec49502b0bee1aa6afad113627777fb9ae08abb219af886e8e1911d09/product_41910_product_shot_wide.jpg" /><img class="img-responsive" alt="Pre-Investing: Before Investing in Real Estate - Product Image" src="https://cdnp3.stackassets.com/626707b88dd84555a5945d71a0fbf98cd53fb1c1/store/opt/596/298/419ec49502b0bee1aa6afad113627777fb9ae08abb219af886e8e1911d09/product_41910_product_shot_wide.jpg" /></picture>
+</div>
+
+
+                    <div class="bubble-bundle-page-product-details text-center">
+                      <div class="bubble">
+  <div class="title">Access</div>
+  <div class="value">Lifetime</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Content</div>
+  <div class="value">5.0 hours</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">50</div>
+</div>
+
+                    </div>
+              </div>
+              <div class="col-md-6 course">
+                <h3><strong>Pre-Investing: Before Investing in Real Estate</strong></h3>
+                <h4>
+                  Explore the Key Concepts to Know Before Making Your First Investment
+                </h4>
+
+                <p>
+                  By <a class="brand-primary" href="/brands/symon-he">Symon He</a>
+                    | in <a class="brand-primary" href="/collections/online-courses">Online Courses</a>
+                </p>
+                  <div class="bundle-page-product-details">
+  
+  <ul class="nav nav-tabs " role="tablist">
+      <li class="col-xs-4 active primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41910-description"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41910-description-content">
+          Description
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41910-instructor"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41910-instructor-content">
+          Instructor
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41910-specs"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41910-specs-content">
+          Specs
+        </a>
+</li>  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="product_41910-description-content" role="tabpanel">
+      <p>There's money to be made in real estate, but jumping in blind is not the way to go if you're just starting out. Tailored for beginners, this course looks at the foundational real estate concepts you should know before making your first investment. From evaluating residential and commercial real estate opportunities to identifying and mitigating investment risks, this course will teach you essential skills to kickstart your foray in this field.
+</p>
+<p><b><div style="position:relative; color: #AAA;">
+<span style="font-style:italic; color:#000;">4.6/5 average rating from 15,857 students enrolled: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:6.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b></p>
+<ul>
+<li>Access 50 lectures &amp; 5 hours of content 24/7
+</li>
+<li>Explore vital concepts to know before making your first investment
+</li>
+<li>Dive into evaluating residential &amp; commercial real estate opportunities
+</li>
+<li>Learn about identifying &amp; mitigating investment risks</li>
+</ul>
+    </div>
+    <div class="tab-pane  fade in" id="product_41910-instructor-content" role="tabpanel">
+      <b>Symon He | Stanford MBA | Real Estate | Financial & Data Analysis</b><br>
+<b><div style="position:relative; color: #AAA;"><span style="font-style:italic; color:#000;">4.5/5 Instructor Rating: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b><br>
+Symon He is a real estate investor and business consultant based out of Los Angeles CA. He currently helps private real estate investors with their acquisitions and deal structuring and advises startup entrepreneurs on their financial models and projections for their businesses. He is also a co-founder of LearnAirbnb, a boutique consultancy and education blog specializing in the home-sharing economy. He also writes articles about real estate, investing, small business, and whatever else he's into at the moment at his personal blog.
+<br><br>
+<b><i>206,657 Total Students</i></b><br>
+<b><i>20,155 Reviews</i></b>
+    </div>
+    <div class="tab-pane  fade in" id="product_41910-specs-content" role="tabpanel">
+      <p><b>Important Details</b></p>
+<ul>
+<li>Length of time users can access this course: lifetime</li>
+<li>Access options: desktop &amp; mobile</li>
+<li>Certification of completion included</li>
+<li>Redemption deadline: redeem your code within 30 days of purchase</li>
+<li>Updates included
+</li>
+<li>Experience level required: all levels</li>
+</ul>
+
+<p><b>Requirements</b></p>
+<ul><li>Any device with basic specifications</li></ul>
+    </div>
+  </div>
+
+</div>
+
+  <div class="course-outline inactive">
+    <h4 class="title">Course Outline <i class="fa sc-display-outline pull-right"></i></h4>
+
+      <ul>
+<li>Your First Program <div style="padding: 0 15px 10px; font-size:12px;"><a style="color:rgb(11, 176, 255);" target="_blank" href="https://stackskills.com/courses/enrolled/1061387">Preview</a></div></li>
+<li>Welcome!
+
+<ul>
+<li>Course Introduction - 3:29</li>
+<li>Why invest in real estate? - 6:37</li>
+</ul></li>
+<li>Case Study: Joe&#39;s First Rental Income Property
+
+<ul>
+<li>Meet Joe - 2:47</li>
+<li>Which market will Joe choose to invest in? - 17:17</li>
+<li>Which property will Joe choose to purchase? - 13:31</li>
+<li>Zillow Alternatives</li>
+<li>How much financing will Joe Choose? - 6:25</li>
+<li>Joe&#39;s financial analysis for his investment - 6:24</li>
+</ul></li>
+<li>The Many Ways to Invest in Real Estate
+
+<ul>
+<li>More than one way to invest in real estate. - 1:11</li>
+<li>Real estate asset types 101 - 11:41</li>
+<li>Investment strategies 101 - 4:19</li>
+<li>Popular strategies for first time investors - 19:45</li>
+</ul></li>
+<li>The Real Estate Cycle
+
+<ul>
+<li>Intro to the real estate market cycle - 3:49</li>
+<li>Recovery phase - 8:18</li>
+<li>Expansion - 4:25</li>
+<li>Hypersupply - 4:19</li>
+<li>Recession - 5:57</li>
+<li>Possible next bust? - 7:18</li>
+</ul></li>
+<li>How to Value a Property
+
+<ul>
+<li>To buy profitably, you must value accurately - 2:26</li>
+<li>The Cost Approach to Valuation - 4:13</li>
+<li>The Comparables Approach to Valuation - 8:20</li>
+<li>The Income Approach to Valuation - 6:12</li>
+<li>Assignment: Do your own valuation!</li>
+</ul></li>
+<li>Understanding Your Market
+
+<ul>
+<li>Where to get the data? - 5:32</li>
+<li>Regional analysis - 18:02</li>
+<li>Neighborhood analysis - 9:33</li>
+<li>Scoping out the competition - 14:40</li>
+</ul></li>
+<li>What Makes a Good Investment?
+
+<ul>
+<li>How do we measure investment returns? - 1:48</li>
+<li>Discounting cash flow and the net present value (NPV) - 5:37</li>
+<li>The discount rate - 2:42</li>
+<li>NPV exercise - 7:34</li>
+<li>Measuring efficiency with the internal rate of return (IRR) - 2:33</li>
+<li>IRR exercise - 4:24</li>
+<li>Measuring magnitude with the cash multiple - 1:58</li>
+<li>How to use the measures - 6:03</li>
+<li>NPV and IRR exercise - 4:50</li>
+<li>Holding onto a rental property indefinitely - terminal value - 5:53</li>
+<li>Yields and capitalization rates - 8:38</li>
+<li>Measuring returns summary - 7:49</li>
+</ul></li>
+<li>Using Leverage
+
+<ul>
+<li>What is leverage? - 0:54</li>
+<li>Interest only vs amortized loans - 4:34</li>
+<li>The amortization schedule - 3:57</li>
+<li>How leverage affects investment returns - 5:07</li>
+<li>Impact of debt summary - 4:41</li>
+</ul></li>
+<li>Case Study: Rental Income Property Analysis
+
+<ul>
+<li>Case study overview - 0:50</li>
+<li>Market research part 1 - 16:32</li>
+<li>Market research part 2 - 7:08</li>
+<li>Back of the envelope analysis - 7:59</li>
+<li>Assignment: Run your own investment analysis for a rental property!</li>
+</ul></li>
+<li>Congratulations!
+
+<ul>
+<li>Congratulations! - 1:29</li>
+</ul></li>
+</ul>
+
+    <p class="text-center">
+      <a class="open-all" data-target=".course-outline" href>View Full Curriculum</a>
+    </p>
+  </div>
+
+              </div>
+            </div>
+            <hr class="product-divider">
+            <div id="product-item-41909" class="js-product-details row pagination-details">
+              <div class="col-md-6">
+                <div id="sc-product-image-carousel41909" class="sc-product-image-carousel carousel slide" data-ride="carousel" data-toughness="0.25" data-interval=false>
+  
+      <picture><source media="(max-width: 479px)" srcset="https://cdnp3.stackassets.com/88f048b454b985a6960885fea8601229504c9205/store/opt/450/225/398546d095cdddab978f662eb1caae479bbdda53b24242b2e9594df95c14/product_41909_product_shot_wide.jpg" /><source media="(min-width: 480px) and (max-width: 991px)" srcset="https://cdnp3.stackassets.com/d73ea66fc769f675c74cac521332b3cab4ebb551/store/opt/398546d095cdddab978f662eb1caae479bbdda53b24242b2e9594df95c14/product_41909_product_shot_wide.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="https://cdnp3.stackassets.com/88595943bf3e6b0e1ed162587c645a0e4ba82d8b/store/opt/489/244/398546d095cdddab978f662eb1caae479bbdda53b24242b2e9594df95c14/product_41909_product_shot_wide.jpg" /><img class="img-responsive" alt="Fundamentals of Real Estate Investment Analysis - Product Image" src="https://cdnp3.stackassets.com/953d87a17bbef9ae64d6661268f62b4476d49486/store/opt/596/298/398546d095cdddab978f662eb1caae479bbdda53b24242b2e9594df95c14/product_41909_product_shot_wide.jpg" /></picture>
+</div>
+
+
+                    <div class="bubble-bundle-page-product-details text-center">
+                      <div class="bubble">
+  <div class="title">Access</div>
+  <div class="value">Lifetime</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Content</div>
+  <div class="value">6.0 hours</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">61</div>
+</div>
+
+                    </div>
+              </div>
+              <div class="col-md-6 course">
+                <h3><strong>Fundamentals of Real Estate Investment Analysis</strong></h3>
+                <h4>
+                  Professional Investment Analysis Techniques for Real Estate investing in Residential &amp; Commercial
+                </h4>
+
+                <p>
+                  By <a class="brand-primary" href="/brands/symon-he">Symon He</a>
+                    | in <a class="brand-primary" href="/collections/online-courses">Online Courses</a>
+                </p>
+                  <div class="bundle-page-product-details">
+  
+  <ul class="nav nav-tabs " role="tablist">
+      <li class="col-xs-4 active primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41909-description"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41909-description-content">
+          Description
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41909-instructor"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41909-instructor-content">
+          Instructor
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41909-specs"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41909-specs-content">
+          Specs
+        </a>
+</li>  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="product_41909-description-content" role="tabpanel">
+      <p>Take a practical approach to master the techniques professionals use to evaluate real estate investment opportunities in this course. From flips and flops to rental income properties, this course offers valuable information on a range of investment opportunities, all presented in an accessible, beginner-friendly format.
+</p>
+<p><b><div style="position:relative; color: #AAA;">
+<span style="font-style:italic; color:#000;">4.5/5 average rating from 61,725 students enrolled: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b></p>
+<ul>
+<li>Access 61 lectures &amp; 6 hours of content 24/7
+</li>
+<li>Confidently evaluate the return potential of any real estate investment opportunity
+</li>
+<li>Use professional-grade investment models to evaluate your deals
+</li>
+<li>Differentiate a good investment from a bad one
+</li>
+<li>Use smart investment deal structures w/ business partners</li>
+</ul>
+    </div>
+    <div class="tab-pane  fade in" id="product_41909-instructor-content" role="tabpanel">
+      <b>Symon He | Stanford MBA | Real Estate | Financial & Data Analysis</b><br>
+<b><div style="position:relative; color: #AAA;"><span style="font-style:italic; color:#000;">4.5/5 Instructor Rating: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b><br>
+Symon He is a real estate investor and business consultant based out of Los Angeles CA. He currently helps private real estate investors with their acquisitions and deal structuring and advises startup entrepreneurs on their financial models and projections for their businesses. He is also a co-founder of LearnAirbnb, a boutique consultancy and education blog specializing in the home-sharing economy. He also writes articles about real estate, investing, small business, and whatever else he's into at the moment at his personal blog.
+<br><br>
+<b><i>206,657 Total Students</i></b><br>
+<b><i>20,155 Reviews</i></b>
+    </div>
+    <div class="tab-pane  fade in" id="product_41909-specs-content" role="tabpanel">
+      <p><b>Important Details</b></p>
+<ul>
+<li>Length of time users can access this course: lifetime</li>
+<li>Access options: desktop &amp; mobile</li>
+<li>Certification of completion included</li>
+<li>Redemption deadline: redeem your code within 30 days of purchase</li>
+<li>Updates included
+</li>
+<li>Experience level required: all levels</li>
+</ul>
+
+<p><b>Requirements</b></p>
+<ul><li>Any device with basic specifications</li></ul>
+    </div>
+  </div>
+
+</div>
+
+  <div class="course-outline inactive">
+    <h4 class="title">Course Outline <i class="fa sc-display-outline pull-right"></i></h4>
+
+      <ul>
+<li>Introduction
+
+<ul>
+<li>Course overview - 2:33</li>
+</ul></li>
+<li>Case study #1 - follow along analysis
+
+<ul>
+<li>Case study overview - what to expect - 0:52</li>
+<li>Why investment analysis? - 6:04</li>
+<li>Market research part 1 - 16:32</li>
+<li>Market research part 2 - 7:08</li>
+<li>Running a back of the envelope analysis - 7:59</li>
+<li>The rest of the course - 1:44</li>
+</ul></li>
+<li>Foundations - investment process
+
+<ul>
+<li>The investment process overview - 0:28</li>
+<li>Originations - 2:30</li>
+<li>Analysis - 7:33</li>
+<li>Due diligence - 4:27</li>
+<li>Financing and closing - 3:09</li>
+<li>Construction and rehab - 8:32</li>
+<li>Stabilization - 2:31</li>
+<li>Exit - 3:07</li>
+<li>Summary of investment process - 7:47</li>
+</ul></li>
+<li>Foundations - investment considerations
+
+<ul>
+<li>Investment considerations overview - 0:35</li>
+<li>External considerations - 11:14</li>
+<li>Property considerations - 12:54</li>
+<li>Deal considerations - 9:52</li>
+<li>Other considerations - 5:49</li>
+<li>Summary of investment considerations - 12:30</li>
+</ul></li>
+<li>Foundations - three primary investment strategies
+
+<ul>
+<li>Investment strategies overview - 0:37</li>
+<li>Core investment strategy - 8:22</li>
+<li>Opportunistic investment strategy - 11:21</li>
+<li>Value-added investment strategy - 6:24</li>
+<li>Investment strategies summary - 7:48</li>
+</ul></li>
+<li>Foundations - how to measure returns
+
+<ul>
+<li>Introduction to measures of return - 1:48</li>
+<li>Discounted cash flow and the net present value (NPV) - 5:37</li>
+<li>The discount rate - 2:42</li>
+<li>Net present value (NPV) exercise - 7:34</li>
+<li>Internal rate of return (IRR) - 2:33</li>
+<li>Internal rate of return (IRR) exercise - 4:24</li>
+<li>Cash multiple - 1:58</li>
+<li>Which measure to use? (Part 1) - 6:03</li>
+<li>Which measure to use? (Part 2) - 4:50</li>
+<li>The terminal value - 5:53</li>
+<li>Yields and cap rates - 8:38</li>
+<li>Summary of measures of return - 7:49</li>
+</ul></li>
+<li>Foundations - impact of debt on return
+
+<ul>
+<li>What is debt leverage? - 0:54</li>
+<li>Interest only vs amortized loans - 4:34</li>
+<li>The loan amortization schedule - 3:57</li>
+<li>How debt impacts investment returns - 5:07</li>
+<li>Summary of debt impact - 4:41</li>
+</ul></li>
+<li>Case study #2 - advanced rental income property analysis
+
+<ul>
+<li>Introduction to the case studies - 1:53</li>
+<li>Single unit rental income property overview - 0:43</li>
+<li>Single unit rental income property considerations - 8:34</li>
+<li>Single unit rental income property analysis. (Part 1) - 7:34</li>
+<li>Single unit rental income property analysis. (Part 2) - 6:57</li>
+</ul></li>
+<li>Case study #3 - advanced fix &amp; flip analysis
+
+<ul>
+<li>Single fix &amp; flip overview - 0:59</li>
+<li>Single fix &amp; flip key considerations - 13:40</li>
+<li>Single fix &amp; flip investment analysis. (Part 1) - 7:10</li>
+<li>Single fix &amp; flip investment analysis. (Part 2) - 6:56</li>
+</ul></li>
+<li>Case study #4 - multifamily analysis
+
+<ul>
+<li>Multifamily investment overview - 4:12</li>
+<li>Multifamily key considerations - 11:14</li>
+<li>Multifamily example 1: four-plex apartment - 13:39</li>
+<li>Multifamily example 2: 196 unit apartment complex - 10:08</li>
+</ul></li>
+<li>Case study #5 - multiple properties
+
+<ul>
+<li>Multiple properties overview - 2:16</li>
+<li>Multiple properties key considerations - 5:22</li>
+<li>Multiple properties example - 10:04</li>
+</ul></li>
+<li>Congratulations!
+
+<ul>
+<li>Congratulations! - 1:41</li>
+</ul></li>
+</ul>
+
+    <p class="text-center">
+      <a class="open-all" data-target=".course-outline" href>View Full Curriculum</a>
+    </p>
+  </div>
+
+              </div>
+            </div>
+            <hr class="product-divider">
+            <div id="product-item-41911" class="js-product-details row pagination-details">
+              <div class="col-md-6">
+                <div id="sc-product-image-carousel41911" class="sc-product-image-carousel carousel slide" data-ride="carousel" data-toughness="0.25" data-interval=false>
+  
+      <picture><source media="(max-width: 479px)" srcset="https://cdnp1.stackassets.com/8d3514f3af1d8026233b6fb8aa7248140297483d/store/opt/450/225/71bf20dd0052cb7ae18bacfac4fe08782bc9f98898edbf78d2fdcce65dc7/product_41911_product_shot_wide.jpg" /><source media="(min-width: 480px) and (max-width: 991px)" srcset="https://cdnp1.stackassets.com/07e226ff2b80c5c1e6cf70d900bd31129ba8aa44/store/opt/71bf20dd0052cb7ae18bacfac4fe08782bc9f98898edbf78d2fdcce65dc7/product_41911_product_shot_wide.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="https://cdnp1.stackassets.com/a487f70fbca12697adfd0914856466aa684dd542/store/opt/489/244/71bf20dd0052cb7ae18bacfac4fe08782bc9f98898edbf78d2fdcce65dc7/product_41911_product_shot_wide.jpg" /><img class="img-responsive" alt="Introduction to Commercial Real Estate Analysis - Product Image" src="https://cdnp1.stackassets.com/9374da88a6bf4baa3190fb6f4767e776e093cc79/store/opt/596/298/71bf20dd0052cb7ae18bacfac4fe08782bc9f98898edbf78d2fdcce65dc7/product_41911_product_shot_wide.jpg" /></picture>
+</div>
+
+
+                    <div class="bubble-bundle-page-product-details text-center">
+                      <div class="bubble">
+  <div class="title">Access</div>
+  <div class="value">Lifetime</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Content</div>
+  <div class="value">4.0 hours</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">31</div>
+</div>
+
+                    </div>
+              </div>
+              <div class="col-md-6 course">
+                <h3><strong>Introduction to Commercial Real Estate Analysis</strong></h3>
+                <h4>
+                  Learn the Essentials of Commercial Real Estate Investment Analysis
+                </h4>
+
+                <p>
+                  By <a class="brand-primary" href="/brands/symon-he">Symon He</a>
+                    | in <a class="brand-primary" href="/collections/online-courses">Online Courses</a>
+                </p>
+                  <div class="bundle-page-product-details">
+  
+  <ul class="nav nav-tabs " role="tablist">
+      <li class="col-xs-4 active primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41911-description"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41911-description-content">
+          Description
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41911-instructor"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41911-instructor-content">
+          Instructor
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41911-specs"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41911-specs-content">
+          Specs
+        </a>
+</li>  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="product_41911-description-content" role="tabpanel">
+      <p>Not too long ago, the commercial real estate game was reserved for big financial institutions and wealthy private investors, but now virtually anyone can throw their hat in the ring. Designed as a beginner-friendly primer, this course takes you through the first crucial steps toward understanding commercial real estate. You'll start with the essentials, then move on to more than a dozen detailed case studies inspired by real-world commercial deals. Pairing these with custom-built investment models, you'll take a hands-on approach to learn exactly how professionals evaluate commercial deals across a wide range of asset types.
+</p>
+<p><b><div style="position:relative; color: #AAA;">
+<span style="font-style:italic; color:#000;">4.5/5 average rating from 7,042 students enrolled: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b></p>
+<ul>
+<li>Access 31 lectures &amp; 4 hours of content 24/7
+</li>
+<li>Learn from case studies inspired by real-world deals
+</li>
+<li>Learn by doing as you access custom-built investment models
+</li>
+<li>Discover how professionals evaluate commercial deals</li>
+</ul>
+    </div>
+    <div class="tab-pane  fade in" id="product_41911-instructor-content" role="tabpanel">
+      <b>Symon He | Stanford MBA | Real Estate | Financial & Data Analysis</b><br>
+<b><div style="position:relative; color: #AAA;"><span style="font-style:italic; color:#000;">4.5/5 Instructor Rating: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b><br>
+Symon He is a real estate investor and business consultant based out of Los Angeles CA. He currently helps private real estate investors with their acquisitions and deal structuring and advises startup entrepreneurs on their financial models and projections for their businesses. He is also a co-founder of LearnAirbnb, a boutique consultancy and education blog specializing in the home-sharing economy. He also writes articles about real estate, investing, small business, and whatever else he's into at the moment at his personal blog.
+<br><br>
+<b><i>206,657 Total Students</i></b><br>
+<b><i>20,155 Reviews</i></b>
+    </div>
+    <div class="tab-pane  fade in" id="product_41911-specs-content" role="tabpanel">
+      <p><b>Important Details</b></p>
+<ul>
+<li>Length of time users can access this course: lifetime</li>
+<li>Access options: desktop &amp; mobile</li>
+<li>Certification of completion included</li>
+<li>Redemption deadline: redeem your code within 30 days of purchase</li>
+<li>Updates included
+</li>
+<li>Experience level required: intermediate</li>
+</ul>
+
+<p><b>Requirements</b></p>
+<ul><li>Any device with basic specifications</li></ul>
+    </div>
+  </div>
+
+</div>
+
+  <div class="course-outline inactive">
+    <h4 class="title">Course Outline <i class="fa sc-display-outline pull-right"></i></h4>
+
+      <ul>
+<li>Course introduction
+
+<ul>
+<li>Course introduction &amp; pre-requisitions - 2:24</li>
+<li>Why investment analysis? Part 1 - 10:17</li>
+<li>Why investment analysis? Part 2 - 7:41</li>
+</ul></li>
+<li>Core concepts
+
+<ul>
+<li>What is commercial real estate? - 12:18</li>
+<li>Commercial real estate asset classes - 6:45</li>
+<li>Elements of commercial leases - 12:18</li>
+<li>Types of commercial leases - 15:36</li>
+<li>Replacement cost - 7:04</li>
+<li>Highest and best use - 7:48</li>
+<li>Deal states - 7:14</li>
+<li>Introduction to the case study investment model template - 8:50</li>
+</ul></li>
+<li>Warehouse
+
+<ul>
+<li>Industrial warehouse asset class - 19:16</li>
+<li>Warehouse subdivision example - 7:19</li>
+<li>Industrial warehouse portfolio example - 8:28</li>
+</ul></li>
+<li>Retail
+
+<ul>
+<li>Retail asset class - 18:59</li>
+<li>Simple retail example - 7:21</li>
+<li>Anchored retail example - 6:10</li>
+<li>Mixed-use retail example - 8:11</li>
+</ul></li>
+<li>Office
+
+<ul>
+<li>Office asset class - 16:30</li>
+<li>Simple neighborhood office example - 8:16</li>
+<li>Downtown high rise office example - 7:36</li>
+<li>Built to suit medical office development example - 11:26</li>
+</ul></li>
+<li>Multifamily
+
+<ul>
+<li>Multifamily case study overview - 5:32</li>
+<li>Multifamily example: Low initial renovation - 5:12</li>
+<li>Multifamily example: High initial renovation - 3:20</li>
+</ul></li>
+<li>Operating assets
+
+<ul>
+<li>Specialty operating assets - 4:09</li>
+<li>Self storage example - 13:10</li>
+<li>Economy hotel example - 12:09</li>
+<li>Parking garage example - 11:23</li>
+<li>Land banking example - 11:40</li>
+</ul></li>
+<li>Congratulations!
+
+<ul>
+<li>Congratulations! - 0:41</li>
+</ul></li>
+</ul>
+
+    <p class="text-center">
+      <a class="open-all" data-target=".course-outline" href>View Full Curriculum</a>
+    </p>
+  </div>
+
+              </div>
+            </div>
+            <hr class="product-divider">
+            <div id="product-item-41912" class="js-product-details row pagination-details">
+              <div class="col-md-6">
+                <div id="sc-product-image-carousel41912" class="sc-product-image-carousel carousel slide" data-ride="carousel" data-toughness="0.25" data-interval=false>
+  
+      <picture><source media="(max-width: 479px)" srcset="https://cdnp3.stackassets.com/af3a7bb5a076477683dae67aa567bd32069bdde3/store/opt/450/225/87c44852bd93009a57695b48c11a4b9aed21c3a4c93b30ef1eab47e37163/product_41912_product_shot_wide.jpg" /><source media="(min-width: 480px) and (max-width: 991px)" srcset="https://cdnp3.stackassets.com/c92c559b7803df219805e3c7f5bb7b300d5e0f40/store/opt/87c44852bd93009a57695b48c11a4b9aed21c3a4c93b30ef1eab47e37163/product_41912_product_shot_wide.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="https://cdnp3.stackassets.com/598e8fb1af9c44954ddac4e7fc91b6ba595b554e/store/opt/489/244/87c44852bd93009a57695b48c11a4b9aed21c3a4c93b30ef1eab47e37163/product_41912_product_shot_wide.jpg" /><img class="img-responsive" alt="How to Invest with Partners in Real Estate - Product Image" src="https://cdnp3.stackassets.com/ffa53f3f2af5a1111a4a3378a1a90d27c2339c1e/store/opt/596/298/87c44852bd93009a57695b48c11a4b9aed21c3a4c93b30ef1eab47e37163/product_41912_product_shot_wide.jpg" /></picture>
+</div>
+
+
+                    <div class="bubble-bundle-page-product-details text-center">
+                      <div class="bubble">
+  <div class="title">Access</div>
+  <div class="value">Lifetime</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Content</div>
+  <div class="value">1.0 hours</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">24</div>
+</div>
+
+                    </div>
+              </div>
+              <div class="col-md-6 course">
+                <h3><strong>How to Invest with Partners in Real Estate</strong></h3>
+                <h4>
+                  Use This Key Framework for Structuring Real Estate Investments with Business Partners
+                </h4>
+
+                <p>
+                  By <a class="brand-primary" href="/brands/symon-he">Symon He</a>
+                    | in <a class="brand-primary" href="/collections/online-courses">Online Courses</a>
+                </p>
+                  <div class="bundle-page-product-details">
+  
+  <ul class="nav nav-tabs " role="tablist">
+      <li class="col-xs-4 active primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41912-description"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41912-description-content">
+          Description
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41912-instructor"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41912-instructor-content">
+          Instructor
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41912-specs"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41912-specs-content">
+          Specs
+        </a>
+</li>  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="product_41912-description-content" role="tabpanel">
+      <p>Splitting profits with partners isn't so cut-and-dry when it comes to investing in real estate. What if each person is contributing different amounts of capital or labor? What if one partner is contributing more money and zero labor? In situations like these and more, real estate professionals rely on the Waterfall Distribution Framework. In this course, you'll discover what the framework is and how it's used for investments; and you'll learn how it's applied with two example case studies to learn from.
+</p>
+<p><b><div style="position:relative; color: #AAA;">
+<span style="font-style:italic; color:#000;">4.5/5 average rating from 206,692 students enrolled: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b></p>
+<ul>
+<li>Access 24 lectures &amp; 1 hours of content 24/7
+</li>
+<li>Learn how to split profits w/ partners via the Waterfall Distribution Framework
+</li>
+<li>Use the Waterfall Framework to structure your investments in real estate
+</li>
+<li>Use milestones &amp; actual contributions to calculate a founder's equity</li>
+</ul>
+    </div>
+    <div class="tab-pane  fade in" id="product_41912-instructor-content" role="tabpanel">
+      <b>Symon He | Stanford MBA | Real Estate | Financial & Data Analysis</b><br>
+<b><div style="position:relative; color: #AAA;"><span style="font-style:italic; color:#000;">4.5/5 Instructor Rating: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b><br>
+Symon He is a real estate investor and business consultant based out of Los Angeles CA. He currently helps private real estate investors with their acquisitions and deal structuring and advises startup entrepreneurs on their financial models and projections for their businesses. He is also a co-founder of LearnAirbnb, a boutique consultancy and education blog specializing in the home-sharing economy. He also writes articles about real estate, investing, small business, and whatever else he's into at the moment at his personal blog.
+<br><br>
+<b><i>206,657 Total Students</i></b><br>
+<b><i>20,155 Reviews</i></b>
+    </div>
+    <div class="tab-pane  fade in" id="product_41912-specs-content" role="tabpanel">
+      <p><b>Important Details</b></p>
+<ul>
+<li>Length of time users can access this course: lifetime</li>
+<li>Access options: desktop &amp; mobile</li>
+<li>Certification of completion included</li>
+<li>Redemption deadline: redeem your code within 30 days of purchase</li>
+<li>Updates included
+</li>
+<li>Experience level required: intermediate</li>
+</ul>
+
+<p><b>Requirements</b></p>
+<ul><li>Any device with basic specifications</li></ul>
+
+    </div>
+  </div>
+
+</div>
+
+  <div class="course-outline inactive">
+    <h4 class="title">Course Outline <i class="fa sc-display-outline pull-right"></i></h4>
+
+      <ul>
+<li>Introduction
+
+<ul>
+<li>Course Overview - 2:18</li>
+</ul></li>
+<li>Why invest with others?
+
+<ul>
+<li>Why invest with others - 3:32</li>
+<li>Risks - 1:28</li>
+<li>Intro to waterfall - 10:33</li>
+</ul></li>
+<li>The waterfall framework
+
+<ul>
+<li>Waterfall example overview - 2:11</li>
+<li>No Waterfall - 4:08</li>
+<li>Two Tier Waterfall - 3:09</li>
+<li>Three Tier Waterfall - 3:36</li>
+<li>Four Tier Waterfall - 5:17</li>
+<li>Waterfall Summary - 5:41</li>
+<li>Which Waterfall To Use - 2:15</li>
+</ul></li>
+<li>Money losing investment
+
+<ul>
+<li>What happens if the investment loses money? - 0:30</li>
+<li>Money Losing Waterfall Example - 4:53</li>
+</ul></li>
+<li>Additional waterfall examples
+
+<ul>
+<li>Rental Income Property Model with Waterfall - 6:55</li>
+<li>Fix and Flip Waterfall Model - 5:25</li>
+<li>Restaurant Example - 9:21</li>
+<li>Parking Garage Example - 5:39</li>
+<li>Other uses for waterfall - 1:19</li>
+</ul></li>
+<li>Closing thoughts
+
+<ul>
+<li>Closing thoughts - 1:49</li>
+</ul></li>
+<li>Bonus material - deep dive into the waterfall modeling
+
+<ul>
+<li>Waterfall model deep dive - 0:56</li>
+<li>Modeling out the preferred return - 10:19</li>
+<li>Modeling IRR and Cash Multiple - 7:55</li>
+<li>Modeling the catchup - 6:42</li>
+<li>Wrapping up Model - 4:20</li>
+</ul></li>
+</ul>
+
+    <p class="text-center">
+      <a class="open-all" data-target=".course-outline" href>View Full Curriculum</a>
+    </p>
+  </div>
+
+              </div>
+            </div>
+            <hr class="product-divider">
+            <div id="product-item-41913" class="js-product-details row pagination-details">
+              <div class="col-md-6">
+                <div id="sc-product-image-carousel41913" class="sc-product-image-carousel carousel slide" data-ride="carousel" data-toughness="0.25" data-interval=false>
+  
+      <picture><source media="(max-width: 479px)" srcset="https://cdnp2.stackassets.com/4080bcfd94acadd1460ece696ad81ca15373ebf5/store/opt/450/225/591cd70d781e51459a2e9065c8262684097ceef3cfd1b655cc8185755905/product_41913_product_shot_wide.jpg" /><source media="(min-width: 480px) and (max-width: 991px)" srcset="https://cdnp2.stackassets.com/e8985a5632b7e56e36a7d60ec4c2f1f78f1cb807/store/opt/591cd70d781e51459a2e9065c8262684097ceef3cfd1b655cc8185755905/product_41913_product_shot_wide.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="https://cdnp2.stackassets.com/bff4f3300cdac0d6ce62001d1fc7c94cc9910d08/store/opt/489/244/591cd70d781e51459a2e9065c8262684097ceef3cfd1b655cc8185755905/product_41913_product_shot_wide.jpg" /><img class="img-responsive" alt="How to Analyze a Wholesale Deal in Real Estate - Product Image" src="https://cdnp2.stackassets.com/9c184e78fe4d1880718f69c106150732d61d0ec3/store/opt/596/298/591cd70d781e51459a2e9065c8262684097ceef3cfd1b655cc8185755905/product_41913_product_shot_wide.jpg" /></picture>
+</div>
+
+
+                    <div class="bubble-bundle-page-product-details text-center">
+                      <div class="bubble">
+  <div class="title">Access</div>
+  <div class="value">Lifetime</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Content</div>
+  <div class="value">1.0 hours</div>
+</div>
+
+                      <div class="bubble">
+  <div class="title">Lessons</div>
+  <div class="value">15</div>
+</div>
+
+                    </div>
+              </div>
+              <div class="col-md-6 course">
+                <h3><strong>How to Analyze a Wholesale Deal in Real Estate</strong></h3>
+                <h4>
+                  Explore the Fundamentals of Wholesale Deal Analysis with a Custom-Built Calculator
+                </h4>
+
+                <p>
+                  By <a class="brand-primary" href="/brands/symon-he">Symon He</a>
+                    | in <a class="brand-primary" href="/collections/online-courses">Online Courses</a>
+                </p>
+                  <div class="bundle-page-product-details">
+  
+  <ul class="nav nav-tabs " role="tablist">
+      <li class="col-xs-4 active primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41913-description"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41913-description-content">
+          Description
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41913-instructor"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41913-instructor-content">
+          Instructor
+        </a>
+</li>      <li class="col-xs-4  primary-border-bottom-active">
+        <a data-toggle="tab"
+          id="product_41913-specs"
+          role="tab"
+          class="text-capitalize js-product-detail"
+          href="#product_41913-specs-content">
+          Specs
+        </a>
+</li>  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="product_41913-description-content" role="tabpanel">
+      <p>If you want to get into wholesaling real estate, but aren't quite sure how to evaluate a deal, you'd be remiss to skip this course. Designed for complete beginners, this course exposes you to the techniques professionals use to evaluate their deals. Plus, you'll also get a custom-built calculator to help speed up the evaluation process. You'll learn foundational concepts, like the 70% Rule and the Fixed Costs Method, to evaluate your wholesaling deals and emerge with a better understanding of how to present deal economics to both potential flip investor buyers as well as buy and hold investor buyers.
+</p>
+<p><b><div style="position:relative; color: #AAA;">
+<span style="font-style:italic; color:#000;">4.6/5 average from 14,235 students enrolled: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:6.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b></p>
+<ul>
+<li>Access 15 lectures &amp; 1 hour of content 24/7
+</li>
+<li>Learn the fundamentals for analyzing a wholesale deal in real estate
+</li>
+<li>Access a custom-built deal calculator for pitching to potential buyers
+</li>
+<li>Understand the After Repair Value, why it matters &amp; how to calculate it
+</li>
+<li>Explore pitching your property to a buy &amp; hold investor buyer
+</li>
+<li>Dive into pitching your property to a flip investor buyer</li>
+</ul>
+    </div>
+    <div class="tab-pane  fade in" id="product_41913-instructor-content" role="tabpanel">
+      <b>Symon He | Stanford MBA | Real Estate | Financial & Data Analysis</b><br>
+<b><div style="position:relative; color: #AAA;"><span style="font-style:italic; color:#000;">4.5/5 Instructor Rating: 
+</span><span style="color:#F3A271;">&starf; &starf; &starf; &starf;</span>
+<span style="position:absolute; height:100%; width:5.5px; color:#F3A271; overflow:hidden;">&starf;</span> &starf;</div></b><br>
+Symon He is a real estate investor and business consultant based out of Los Angeles CA. He currently helps private real estate investors with their acquisitions and deal structuring and advises startup entrepreneurs on their financial models and projections for their businesses. He is also a co-founder of LearnAirbnb, a boutique consultancy and education blog specializing in the home-sharing economy. He also writes articles about real estate, investing, small business, and whatever else he's into at the moment at his personal blog.
+<br><br>
+<b><i>206,657 Total Students</i></b><br>
+<b><i>20,155 Reviews</i></b>
+    </div>
+    <div class="tab-pane  fade in" id="product_41913-specs-content" role="tabpanel">
+      <p><b>Important Details</b></p>
+<ul>
+<li>Length of time users can access this course: lifetime</li>
+<li>Access options: desktop &amp; mobile</li>
+<li>Certification of completion included</li>
+<li>Redemption deadline: redeem your code within 30 days of purchase</li>
+<li>Updates included
+</li>
+<li>Experience level required: intermediate</li>
+</ul>
+
+<p><b>Requirements</b></p>
+<ul><li>Any device with basic specifications</li></ul>
+    </div>
+  </div>
+
+</div>
+
+  <div class="course-outline inactive">
+    <h4 class="title">Course Outline <i class="fa sc-display-outline pull-right"></i></h4>
+
+      <ul>
+<li>Course Intro
+
+<ul>
+<li>Introduction and Course Overview - 2:43</li>
+<li>What is Wholesaling? - 5:10</li>
+</ul></li>
+<li>The Metrics and Methods
+
+<ul>
+<li>The After Repair Value (ARV) - 4:09</li>
+<li>The Maximum Allowable Offer (MAO) - 2:17</li>
+<li>How to Go From the ARV to the MAO - 4:06</li>
+<li>The 70% Rule - 2:17</li>
+<li>The Fixed Costs Method - 2:58</li>
+</ul></li>
+<li>The Wholesaling Calculator
+
+<ul>
+<li>The Wholesaling Calculator Overview - 2:49</li>
+<li>The Rehab Estimator Worksheet - 7:26</li>
+<li>The ARV Calculator Worksheet - 16:15</li>
+<li>The MAO Calculator Worksheet Part 1 - 5:02</li>
+<li>The MAO Calculator Worksheet Part 2 - 4:53</li>
+</ul></li>
+<li>Pitching to Investor Buyers
+
+<ul>
+<li>Pitching Flip Investor Buyer - 5:16</li>
+<li>Pitching Buy and Hold Investor Buyer - 6:02</li>
+</ul></li>
+<li>Congratulations!
+
+<ul>
+<li>Congratulations - 1:15</li>
+</ul></li>
+</ul>
+
+    <p class="text-center">
+      <a class="open-all" data-target=".course-outline" href>View Full Curriculum</a>
+    </p>
+  </div>
+
+              </div>
+            </div>
+            <hr class="product-divider">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>
+  <div class="row">
+    <div class="col-xs-12"><hr></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="item">
+        <h4>Terms</h4>
+        <ul><li>Unredeemed licenses can be returned for store credit within 30 days of purchase. Once your license is redeemed, all sales are final.</li></ul>
+      </div>
+    </div>
+    <div class="col-md-6 sc-bundle-page-purchase-form">
+      <div class="row">
+        <div class="item hidden-xs hidden-sm">
+          <ng-form class="buy-form form-horizontal js-sc-purchase-form" data-type="Bundle" data-price="25.0" data-name="The Fundamentals of Real Estate Investment Bundle" data-ids="[31347]" role="form" ng-controller="AddToCartCtrl">
+
+  <input type="hidden" name="sale_id" id="sale_id" value="31347" data-sale-slug="the-fundamentals-of-real-estate-investment-bundle" />
+
+    <div class="col-md-4 select--left hidden-sm hidden-xs col-lg-3">
+      <select name="quantity" id="quantity" class="form-control js-quantity" data-price="2500" data-recurring="false" ng-model="quantity"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+    </div>
+
+  <div class="col-md-8 col-xs-12 col-lg-9 ">
+    <add-to-cart-button class="hidden-xs hidden-sm btn btn-lg btn-block btn-success js-purchase-submit form-control additem" ng-click="addItem()" ng-disabled="addingToCart" data-button-type="buy_now">
+      Add to Cart - $25
+</add-to-cart-button>    <add-to-cart-button class="visible-xs visible-sm btn btn-lg btn-success js-sc-sale-form-submit-mobile form-control" ng-click="addItem()" ng-disabled="addingToCart" data-button-type="buy_now">
+      <span>
+        Add to Cart - $25
+      </span>
+</add-to-cart-button>  </div>
+
+    <div class="hidden-md hidden-lg select-mobile">
+      <select name="quantity" id="quantity" class="form-control js-quantity" data-price="2500" data-recurring="false" ng-model="quantity"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+    </div>
+
+</ng-form>
+<div class="buy-now-fixed js-sc-sale-buy-now-fixed">
+  <div class="js-no-variant" data-type="Bundle" data-toggle="#sc-purchase-form"><add-to-cart-button class="btn btn-success btn-lg btn-block js-no-variant-text" data-button-type="buy_now">Add to Cart ($25)</add-to-cart-button></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container sale-reviews js-sale-reviews">
+    <div class="js-sale-reviews-header"></div>
+    <div class="js-sale-reviews-entries-container"></div>
+
+    <div class="sale-reviews-expand-reviews">
+      <a href="#" class="js-sale-reviews-see-more-link brand-primary">See More Reviews</a>
+    </div>
+  </div>
+
+  <script class="js-sale-reviews-header-template" type="text/html">
+    <div class="sale-reviews-header">
+      <ul class="sale-reviews-line">
+        <li class="sale-reviews-count">
+          <b>Reviews ({{ total_count }})</b>
+        </li>
+        <li class="sale-reviews-stars-average">
+          <div class="rating">
+    <input
+      id="star_rating10"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 10 }}" />
+    <label
+      for="star_rating10"
+      class="full">
+    </label>
+    <input
+      id="star_rating9"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 9 }}" />
+    <label
+      for="star_rating9"
+      class="half">
+    </label>
+    <input
+      id="star_rating8"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 8 }}" />
+    <label
+      for="star_rating8"
+      class="full">
+    </label>
+    <input
+      id="star_rating7"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 7 }}" />
+    <label
+      for="star_rating7"
+      class="half">
+    </label>
+    <input
+      id="star_rating6"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 6 }}" />
+    <label
+      for="star_rating6"
+      class="full">
+    </label>
+    <input
+      id="star_rating5"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 5 }}" />
+    <label
+      for="star_rating5"
+      class="half">
+    </label>
+    <input
+      id="star_rating4"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 4 }}" />
+    <label
+      for="star_rating4"
+      class="full">
+    </label>
+    <input
+      id="star_rating3"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 3 }}" />
+    <label
+      for="star_rating3"
+      class="half">
+    </label>
+    <input
+      id="star_rating2"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 2 }}" />
+    <label
+      for="star_rating2"
+      class="full">
+    </label>
+    <input
+      id="star_rating1"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ average_score * 2 >= 1 }}" />
+    <label
+      for="star_rating1"
+      class="half">
+    </label>
+</div>
+
+
+        </li>
+        <li class="sale-reviews-advice">
+          <img class="sale-reviews-verified-mark" alt="Verified" src="https://shops1.stackassets.com/assets/checkmark-b6bb330dfb8d9035907a79040b8ba7fd46a4dffbad93d6e1334d20d343214888.svg" />
+          All reviews are from verified purchasers. Reviews are collected after purchase.
+        </li>
+      </ul>
+    </div>
+  </script>
+
+  <script class="js-sale-reviews-entry-template" type="text/html">
+    <div class="sale-reviews-entry">
+      <hr />
+      <ul class="sale-reviews-line">
+        <li class="sale-reviews-review-author">
+          <b>{{ author }}</b>
+          <img class="sale-reviews-verified-mark" alt="Verified" src="https://shops1.stackassets.com/assets/checkmark-b6bb330dfb8d9035907a79040b8ba7fd46a4dffbad93d6e1334d20d343214888.svg" />
+        </li>
+        <li>
+          <div class="rating">
+    <input
+      id="star_rating10"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 10 }}" />
+    <label
+      for="star_rating10"
+      class="full">
+    </label>
+    <input
+      id="star_rating9"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 9 }}" />
+    <label
+      for="star_rating9"
+      class="half">
+    </label>
+    <input
+      id="star_rating8"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 8 }}" />
+    <label
+      for="star_rating8"
+      class="full">
+    </label>
+    <input
+      id="star_rating7"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 7 }}" />
+    <label
+      for="star_rating7"
+      class="half">
+    </label>
+    <input
+      id="star_rating6"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 6 }}" />
+    <label
+      for="star_rating6"
+      class="full">
+    </label>
+    <input
+      id="star_rating5"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 5 }}" />
+    <label
+      for="star_rating5"
+      class="half">
+    </label>
+    <input
+      id="star_rating4"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 4 }}" />
+    <label
+      for="star_rating4"
+      class="full">
+    </label>
+    <input
+      id="star_rating3"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 3 }}" />
+    <label
+      for="star_rating3"
+      class="half">
+    </label>
+    <input
+      id="star_rating2"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 2 }}" />
+    <label
+      for="star_rating2"
+      class="full">
+    </label>
+    <input
+      id="star_rating1"
+      type="radio"
+      disabled="disabled"
+      data-checked="{{ rating * 2 >= 1 }}" />
+    <label
+      for="star_rating1"
+      class="half">
+    </label>
+</div>
+
+
+        </li>
+        <li class="sale-reviews-review-date">
+          {{ date }}
+        </li>
+      </ul>
+      <br />
+      <i class="sale-reviews-review-description">{{ comment }}</i>
+    </div>
+  </script>
+
+
+  <div class="bundle-page-best-sellers category-footer intelligent-modules-container">
+    <div class="js-intelligent-module-sale js-best-sellers intelligent-modules-section">
+      <div data-columns="4" data-title="Best Sellers" data-index-url="/best-sellers" data-entries="/v0/search/sales?exclude_sale_ids%5B%5D=31347&amp;per_page=4&amp;publisher_id=185&amp;sort=best_sellers&amp;tags%5B%5D=Slickdeals+August+2020+40%25+Off+Online+Courses" data-module-type="SalesIntelligentModule" class="intelligent-module js-intelligent-module sales-intelligent-module "></div>
+    </div>
+
+    
+  </div>
+</div>
+<div class="hidden-xs">
+  <a href data-toggle="#stacksocial-wrapper" id="back-to-top" class="anchor-link hidden-phone" aria-label="scroll to top">
+    <i aria-hidden="true" class="icon-pushup" title="Scroll to Top"></i>
+  </a>
+</div>
+
+
+        </div>
+      </div>
+
+      <footer id="footer" class="footer">
+  <div class="container">
+
+    <div class="footer-menus-row row">
+      <div class="col-md-5">
+        <div class="footer-newsletter">
+    <h5 class="footer-title footer-newsletter-title">Sign up & get 10% Off</h5>
+
+  <form class="clearfix form-inline" id="newsletter-subscribe-form" data-use-recaptcha="true" role="form" action="/subscribe?footer_newsletter=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Pd3JkJTJvWhv2o+MY86gTwnUYUfUfZsliab6lS8811AoIhjigP7S8onpw1d5N3XgZVJR9YjfwIEaFKqZlZOfww==" />
+    <div class="clearfix js-mailcheck-container">
+      <input type="hidden" name="source" id="footer-source" value="Footer" />
+      <label for="signup-newsletter" class="sr-only">Email address</label>
+      <input type="email" name="email" id="signup-newsletter" class="form-control js-email-field" placeholder="Email" />
+
+      <input type="hidden" name="g-recaptcha-response" class="g-recaptcha-response" />
+
+      <button type="submit" class="btn-primary">
+        Sign up
+      </button>
+    </div>
+
+      <span class="newsletter-legend">
+          *New customers only. Offer lasts 30 days. See Terms.
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+      </span>
+</form></div>
+
+<script type="text/javascript">
+  $('#newsletter-subscribe-form').on('submit', function(event) {
+    submitFormWithRecaptcha(event, "recaptcha_newsletter_subscription")
+  });
+</script>
+
+      </div>
+
+      <div class="col-md-7 footer-menus footer-menus-vendor">
+        <div class="row">
+          <div class="col-xs-4">
+  <h4 class="footer-title">My Account</h4>
+
+  <ul class="list-unstyled">
+    <li>
+      <a href="/user?show=profile-tab">Profile</a>
+    </li>
+    <li>
+      <a href="/user?show=account-tab">Account</a>
+    </li>
+    <li>
+      <a href="/user/purchases">Purchases</a>
+    </li>
+    <li>
+      <a href="/user/credits">Credits</a>
+    </li>
+    <li>
+      <a href="/user?show=preferences-tab">Preferences</a>
+    </li>
+    <li>
+      <a href="/user?show=info-request">Do Not Sell My Personal Information</a>
+    </li>
+  </ul>
+</div>
+
+<div class="col-xs-4">
+  <h4 class="footer-title">Support</h4>
+
+  <ul class="list-unstyled">
+    <li>
+      <a target="_blank" href="https://support.stackcommerce.com/hc/en-us/requests/new?persona=General+Tech+News&amp;publisher_id=185&amp;publisher_logo=https%3A%2F%2Fcdnp2.stackassets.com%2Ff184a332a16b3465fe15d47e414db661809fc113%2Fstore%2Fdc646adda93430b5695afa5021be1b84dc6f192a62ef02ec199daae41afc%2F_logo-desktop.png&amp;sale_id=31347&amp;sale_name=The+Fundamentals+of+Real+Estate+Investment+Bundle&amp;sale_url=https%3A%2F%2Fdeals.gdgt.com%2Fsales%2Fthe-fundamentals-of-real-estate-investment-bundle&amp;source=lower+footer+contact+link">Contact</a>
+    </li>
+    <li>
+      <a target="_blank" href="https://support.stackcommerce.com/hc/en-us/?persona=General+Tech+News&amp;publisher_id=185&amp;publisher_logo=https%3A%2F%2Fcdnp2.stackassets.com%2Ff184a332a16b3465fe15d47e414db661809fc113%2Fstore%2Fdc646adda93430b5695afa5021be1b84dc6f192a62ef02ec199daae41afc%2F_logo-desktop.png&amp;sale_id=31347&amp;sale_name=The+Fundamentals+of+Real+Estate+Investment+Bundle&amp;sale_url=https%3A%2F%2Fdeals.gdgt.com%2Fsales%2Fthe-fundamentals-of-real-estate-investment-bundle&amp;source=lower+footer+FAQs+link">FAQs</a>
+    </li>
+    <li>
+      <a target="_blank" href="https://support.stackcommerce.com/hc/en-us/categories/360000641992-Shipping?persona=General+Tech+News&amp;publisher_id=185&amp;publisher_logo=https%3A%2F%2Fcdnp2.stackassets.com%2Ff184a332a16b3465fe15d47e414db661809fc113%2Fstore%2Fdc646adda93430b5695afa5021be1b84dc6f192a62ef02ec199daae41afc%2F_logo-desktop.png&amp;sale_id=31347&amp;sale_name=The+Fundamentals+of+Real+Estate+Investment+Bundle&amp;sale_url=https%3A%2F%2Fdeals.gdgt.com%2Fsales%2Fthe-fundamentals-of-real-estate-investment-bundle&amp;source=lower+footer+shipping+link">Shipping</a>
+    </li>
+    <li>
+      <a target="_blank" href="https://support.stackcommerce.com/hc/en-us/categories/360000641952-Refund-and-Return-Policy?persona=General+Tech+News&amp;publisher_id=185&amp;publisher_logo=https%3A%2F%2Fcdnp2.stackassets.com%2Ff184a332a16b3465fe15d47e414db661809fc113%2Fstore%2Fdc646adda93430b5695afa5021be1b84dc6f192a62ef02ec199daae41afc%2F_logo-desktop.png&amp;sale_id=31347&amp;sale_name=The+Fundamentals+of+Real+Estate+Investment+Bundle&amp;sale_url=https%3A%2F%2Fdeals.gdgt.com%2Fsales%2Fthe-fundamentals-of-real-estate-investment-bundle&amp;source=lower+footer+returns+link">Returns</a>
+    </li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/accessibility">Accessibility</a></li>
+  </ul>
+</div>
+
+
+            <div class="col-xs-12 col-sm-4 footer-vendor-section">
+  <hr class="visible-xs">
+
+  <h4 class="footer-title">Are you a vendor?</h4>
+  <p class="footer-subtitle">Get exclusive coverage to the world's top publisher sites through the StackCommerce network.</p>
+
+  <a class="pub-footer-link primary-color" target="_blank" href="https://www.stackcommerce.com/vendors">Learn More</a>
+
+  <div class="powered-by">
+  <h6>Powered By</h6>
+
+  <a target="_blank" href="https://stackcommerce.com/">
+    <img alt="StackCommerce" src="https://shops1.stackassets.com/assets/core/logo-light-be04c77da6de1475cb2c1c82cf75120f338265aa36dfd6ed8a6404a720c28431.svg" />
+</a></div>
+
+
+  <div class="hidden-xs pub-copyright">
+    <p>Copyright &copy; 2020 StackCommerce. All Rights Reserved.</p>
+  </div>
+
+  <div class="bbb-badge-container">
+  <a class="sehzbus bbb-badge"
+    id="bbblink"
+    target="_blank" href="https://www.bbb.org/losangelessiliconvalley/business-reviews/online-retailer/stackcommerce-in-venice-ca-1013267#bbbseal"
+    title="StackCommerce, Online Retailer, Venice, CA">
+      <img
+        id="bbblinkimg"
+        src="https://seal-sanjose.bbb.org/logo/sehzbus/stackcommerce-1013267.png"
+        width="200"
+        height="38"
+        alt="StackCommerce, Online Retailer, Venice, CA">
+  </a>
+</div>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+
+        <img alt="GDGT logo" class="sc-footer-pub-logo hidden-xs" src="https://cdnp1.stackassets.com/14489c2c7e059e7aec8bbb33f42e49c7c8e60265/store/acbbc512bffbcd624f4f9e531b70d2db95cf4f8399eb355d27d474ffffbe/65f87e156edf7570d47cc795dff7710de16f2458_logo_footer.png" />
+
+
+  </div>
+</footer>
+
+<script>
+//<![CDATA[
+
+  var bbbprotocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+  document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-sanjose.bbb.org' + unescape('%2Flogo%2Fstackcommerce-1013267.js') + "' type='text/javascript'%3E%3C/script%3E"));
+
+//]]>
+</script>
+    </div>
+
+    <script src="//www.lightboxcdn.com/vendor/2b159396-5db4-4f36-950e-cd35347c27bb/lightbox_inline.js"></script>
+
+    
+    <script src="https://shops1.stackassets.com/assets/config-1f804646a773fcbfb637a5dced669235a1e51d565e9c8824dfb879ad60b483bb.js"></script>
+
+<script>
+  SC.config.setPublisher({"id":185,"name":"GDGT","hostname":"deals.gdgt.com","brand_primary_color":"#00B0FF","vertical":"technology"});
+  SC.config.setUser(null);
+  SC.config.setOptions({
+    loyaltySpentAmount: '$25',
+    loyaltyAmountInCredit: '$1',
+    jetloreCartUpsellFilter: 'PROD_CART_UPSELL_FILTER'
+  });
+</script>
+
+    <script src="https://shops1.stackassets.com/assets/classic-e3081a3ccd37dcfb92c4efe9161014a9b603b863b1427f136e5779253aedc91a.js"></script>
+      <script type="text/javascript">
+    var _at = {}; window._at.track = window._at.track || function(){(window._at.track.q = window._at.track.q || []).push(arguments);};
+
+    _at.domain = 'deals.gdgt.com/';
+    _at.idSite = '8346';
+    _at.webpushid = 'web.88.aimtell.com';
+    _at.owner = '2fcd12b568b6';
+    _at.attributes = {};
+
+    (function() { var u='//s3.amazonaws.com/cdn.aimtell.com/trackpush/'; var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'trackpush.min.js'; s.parentNode.insertBefore(g,s); })();
+  </script>
+
+    <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
+    if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    t._e = []; t.ready = function(f) { t._e.push(f); };
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
+
+<script>
+</script>
+
+  <!-- Quantcast Tag, part 2 -->
+  <script type="text/javascript">
+    _qevents.push( { qacct:"p-443uI8zl5eTMM" } );
+  </script>
+  <noscript>
+    <div style="display:none;">
+      <img src="//pixel.quantserve.com/pixel/p-443uI8zl5eTMM.gif" border="0" height="1" width="1" alt="Quantcast"/>
+    </div>
+  </noscript>
+<!-- End Quantcast tag -->
+
+    
+    
+
+      
+      
+    <div bundle-club-modal visible="showModal"></div>
+    
+  </body>
+    <script>
+      var event  =  'SCDataLayer';
+      var action =  'BROWSE';
+
+      SC.dataLayer.enqueue(event, action, {"event":"SCDataLayer","action":"BROWSE","productId":31347,"productPrice":25.0});
+  </script>
+
+  
+</html>
